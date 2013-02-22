@@ -1,27 +1,58 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<!-- The HTML 4.01 Transitional DOCTYPE declaration-->
-<!-- above set at the top of the file will set     -->
-<!-- the browser's rendering engine into           -->
-<!-- "Quirks Mode". Replacing this declaration     -->
-<!-- with a "Standards Mode" doctype is supported, -->
-<!-- but may lead to some differences in layout.   -->
-
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Hello App Engine</title>
-  </head>
+    <head>
+        <title>e-valimissüsteem</title>
 
-  <body>
-    <h1>Hello App Engine!</h1>
-	
-    <table>
-      <tr>
-        <td colspan="2" style="font-weight:bold;">Available Servlets:</td>        
-      </tr>
-      <tr>
-        <td><a href="lambiprojekt123">Lambiprojekt123</a></td>
-      </tr>
-    </table>
-  </body>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel='stylesheet' href='css/style.css' type='text/css' title="default"/> 
+    </head>
+    <body>
+        <div id="wrap">
+
+            <div id="header">
+                <div id="head1">
+                    <h1>e-valimissüsteem</h1>
+                </div>
+                <div id="login">
+                    <form id="login_form">
+                        <label>Nimi: </label><input type="text" name="usrename">
+                        <label>Parool: </label><input type="password" name="password">
+                        <input type="submit" name="Logi sisse">
+                    </form>
+                </div>
+            </div>
+
+            <div id="main">
+                <div id="container">
+                    <div id="sidebar">
+                        <label>Audenditud kasutajale:</label>
+                        <ul>
+                            <li>Kandideeri</li>
+                            <li>Hääleta</li>
+                        </ul>
+                        <label>Külastajale:</label>
+                        <ul>
+                            <li>Otsi kandidaate</li>
+                            <li>Nimekirjad</li>
+                            <li>Tulemused reaalajas</li>
+                            <li>Statistika</li>
+                        </ul>
+                    </div>
+                    <div id="content">
+                        <h1>Tere tulemast....</h1>
+                        <h2>KUNA CONTENT PEAKS AINULT MUUTUMA SIIS MA EI TEA MIDA VEEL TEHA</h2>
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                        
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="footer">
+            <p>Veebirakenduste loomise projekt: Mart Vellak, Allar Vallaots, Martin Reilent 2013</p>
+        </div>
+
+    </body>
 </html>
