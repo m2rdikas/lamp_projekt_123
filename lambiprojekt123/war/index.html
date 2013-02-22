@@ -10,14 +10,12 @@
         <div id="wrap">
 
             <div id="header">
-                <div id="head1">
-                    <h1>e-valimissüsteem</h1>
-                </div>
+                <p class="head">e-valimissüsteem</p>
                 <div id="login">
                     <form id="login_form">
-                        <label>Nimi: </label><input type="text" name="usrename">
-                        <label>Parool: </label><input type="password" name="password">
-                        <input type="submit" name="Logi sisse">
+                        <label>Nimi: </label><input class="name" type="text" name="usrename"></br>
+                        <label>Parool: </label><input type="password" name="password"></br>
+                        <input type="submit" class="button sign"  value="Sign In">
                     </form>
                 </div>
             </div>
@@ -25,18 +23,14 @@
             <div id="main">
                 <div id="container">
                     <div id="sidebar">
-                        <label>Audenditud kasutajale:</label>
-                        <ul>
-                            <li>Kandideeri</li>
-                            <li>Hääleta</li>
-                        </ul>
-                        <label>Külastajale:</label>
-                        <ul>
-                            <li>Otsi kandidaate</li>
-                            <li>Nimekirjad</li>
-                            <li>Tulemused reaalajas</li>
-                            <li>Statistika</li>
-                        </ul>
+                        <label class="tekst">Audenditud kasutajale:</label>
+                        	<input type="button" class="button" value="Kandideeri" onclick="window.location.href='candidate.html'"></br>
+                        	<input type="button" class="button" value="Hääleta" onclick="window.location.href='vote.html'"></br>
+                        <label class="tekst">Külastajale:</label></br>
+                            <input type="button" class="button" value="Otsi kandidaate" onclick="window.location.href='search.html'"></br>
+                            <input type="button" class="button" value="Nimekirjad" onclick="window.location.href='lists.html'"></br>
+                            <input type="button" class="button" value="Tulemused reaalajas" onclick="window.location.href='realTime.html'"></br>
+                            <input type="button" class="button" value="Statistika" onclick="window.location.href='statistics.html'">
                     </div>
                     <div id="content">
                         <h1>Tere tulemast....</h1>
