@@ -37,6 +37,10 @@ body, html {
 #header, #header #login, #main #container #sidebar, #footer {
 	display:none;
 	}
+/*Remove Print button*/	
+#print-button {
+	display: none;
+}
 
 /* Show URL */
 a:link, a:visited {
