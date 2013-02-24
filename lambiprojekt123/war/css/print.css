@@ -12,6 +12,7 @@ body, html {
 	color: #000;
 	}
 
+/*IE*/
 #main {
 	overflow:hidden;
 	color: #000;
