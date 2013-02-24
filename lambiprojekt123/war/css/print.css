@@ -2,7 +2,7 @@
 /*Reset Style*/
 
 body, html {
-	margin: 0; 
+	margin: 0 auto; 
 	padding: 0; 
 	overflow-x: hidden !important;
 	line-height: 1.4em; 
@@ -21,7 +21,7 @@ body, html {
 #content {
 	display:inline; 
 	width:90%; 
-	padding: 0
+	padding: 0;
 	} 
 	
 /*Showing data*/
@@ -30,7 +30,7 @@ body, html {
 	padding: 0;
 	width: 600px; 
 	min-height: 400px; 
-	border: 0px
+	border: 0px;
 	}
 
 /*Remove Element*/
