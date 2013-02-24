@@ -7,7 +7,7 @@ html, body {
 	font-style: normal;
 	font-variant: normal;
 	font-weight: normal;
-	line-height: normal
+	line-height: normal;
 }
 
 #main {
@@ -16,7 +16,7 @@ html, body {
 
 #footer {position: relative;
 	height: 150px;
-	clear:both
+	clear:both;
 } 
 
 /*Opera Fix*/
@@ -25,14 +25,14 @@ body:before {
 	height:100%;
 	float:left;
 	width:0;
-	margin-top:-32767px
+	margin-top:-32767px;
 }
 p.head{
 	font-size: 40px;
-	font-weight: bold	
+	font-weight: bold;
 }
 input.name{
-	margin-left: 12px
+	margin-left: 12px;
 }
 input.button{
 	width: 130px;
@@ -41,44 +41,51 @@ input.button{
 	background-color: #d9d9d9;
 	padding-left: 0px;
 	padding-right: 0px;
-	margin-bottom: 10px
+	margin: 0 auto;
+	margin-bottom: 10px;
+	display: block;
+
 }
 input.sign{
 	width: 50px;
-	margin-left: -64px;
 }
 label.tekst{
 	font-size: 14px;
 	font-weight: bold;
+	margin-top: 50px;
+	display: block;
+}
+label.tekst:first-child {
+	margin-top: 0px;
 }
 div {
-	text-align: center
+	text-align: center;
 }
 #header {
 	position: relative;
 	width:960px; height:200px;
-	margin: 0 auto
+	margin: 0 auto;
 }
 #header #login {
 	height: 100%;
 	width:300px;
 	position: absolute;
 	top:0;
-	right:0
+	right:0;
 }
 #main #container {
 	width:960px;
-	margin: 0 auto
+	margin: 0 auto;
 }
 #main #container #sidebar {
 	float: left;
 	width: 200px; 
-	min-height: 400px
+	min-height: 400px;
 }
 #main #container #content {
 	float: right;
 	width: 750px; 
-	min-height: 400px
+	min-height: 400px;
 }
 #footer {
 	width:100%; 
