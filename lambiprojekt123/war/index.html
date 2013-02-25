@@ -24,6 +24,7 @@
             <div id="main">
                 <div id="container">
                     <div id="sidebar">
+                    	<input type="button" class="button" value="Algusesse" onclick="changeContent('content')">
                         <label class="tekst">Audenditud kasutajale:</label>
                         	<input type="button" class="button" value="Kandideeri" onclick="changeContent('candidate')">
                         	<input type="button" class="button" value="Hääleta" onclick="changeContent('vote')">
@@ -39,8 +40,30 @@
                         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>   
                     </div>
                     <div id="candidate" class="hiddenDiv">
-                    	 <h1>Kandideeri</h1>
-                        <h2>&nbsp;</h2>
+                    	<h1>Kandideeri</h1>
+                    	<label>Eesnimi: </label><input type="text" name="firstName">
+                    	<label>Perenimi: </label><input type="text" name="lastName">
+                    	<label>Piirkond: </label><select>
+  												 	<option value="harjumaa">Harju maakond</option>
+  												 	<option value="hiiu">Hiiu maakond</option>
+  												 	<option value="ida-viru">Ida-Viru maakond</option>
+ 												 	<option value="jogeva">Jõgeva maakond</option>
+ 												 	<option value="jarva">Järva maakond</option>
+ 												 	<option value="laane">Lääne maakond</option>
+ 												 	<option value="l-viru">Lääne-Viru maakond</option>
+ 												 	<option value="polva">Põlva maakond</option>
+ 												 	<option value="parnu">Pärnu maakond</option>
+ 												 	<option value="rapla">Rapla maakond</option>
+ 												 	<option value="saare">Saare maakond</option>
+ 												 	<option value="tartu">Tartu maakond</option>
+ 												 	<option value="valga">Valga maakond</option>
+ 												 	<option value="viljandi">Viljandi maakond</option>
+ 												 	<option value="voru">Võru maakond</option>
+												 </select><br>
+                        <label>Erakond: </label><input type="text" name="party">
+                         <input type="button" class="button" value="KANDIDEERI !">
+                         <input type="button" class="button" value="Muuda kandidatuuri">
+                         <input type="button" class="button" value="Tühista kandidatuur">
                     </div>
                     <div id="vote" class="hiddenDiv">
                     	 <h1>Hääleta...</h1>
