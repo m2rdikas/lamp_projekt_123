@@ -61,6 +61,9 @@ label.tekst:first-child {
 div {
 	text-align: center;
 }
+div.hiddenDiv{
+	display: none;
+}
 #header {
 	position: relative;
 	width:960px; height:200px;

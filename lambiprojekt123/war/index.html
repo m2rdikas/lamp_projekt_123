@@ -5,6 +5,7 @@
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel='stylesheet' href='css/css.css' type='text/css' title="default"/>
+        <script type="text/javascript" language="Javascript" src="js/scripts.js"></script>
     </head>
     <body>
         <div id="wrap">
@@ -24,19 +25,42 @@
                 <div id="container">
                     <div id="sidebar">
                         <label class="tekst">Audenditud kasutajale:</label>
-                        	<input type="button" class="button" value="Kandideeri" onclick="window.location.href='candidate.html'">
-                        	<input type="button" class="button" value="Hääleta" onclick="window.location.href='vote.html'">
+                        	<input type="button" class="button" value="Kandideeri" onclick="changeContent('candidate')">
+                        	<input type="button" class="button" value="Hääleta" onclick="changeContent('vote')">
                         <label class="tekst">Külastajale:</label>
-                            <input type="button" class="button" value="Otsi kandidaate" onclick="window.location.href='search.html'">
-                            <input type="button" class="button" value="Nimekirjad" onclick="window.location.href='lists.html'">
-                            <input type="button" class="button" value="Tulemused reaalajas" onclick="window.location.href='realTime.html'">
-                            <input type="button" class="button" value="Statistika" onclick="window.location.href='statistics.html'">
+                            <input type="button" class="button" value="Otsi kandidaate" onclick="changeContent('search')">
+                            <input type="button" class="button" value="Nimekirjad" onclick="changeContent('lists')">
+                            <input type="button" class="button" value="Tulemused reaalajas" onclick="changeContent('realTime')">
+                            <input type="button" class="button" value="Statistika" onclick="changeContent('statistics')">
                     </div>
                     <div id="content">
                         <h1>Tere tulemast....</h1>
                         <h2>KUNA CONTENT PEAKS AINULT MUUTUMA SIIS MA EI TEA MIDA VEEL TEHA</h2>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                        
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>   
+                    </div>
+                    <div id="candidate" class="hiddenDiv">
+                    	 <h1>Kandideeri</h1>
+                        <h2>&nbsp;</h2>
+                    </div>
+                    <div id="vote" class="hiddenDiv">
+                    	 <h1>Hääleta...</h1>
+                        <h2>&nbsp;</h2>
+                    </div>
+                    <div id="search" class="hiddenDiv">
+                    	<h1>Otsi</h1>
+                        <h2>&nbsp;</h2>
+                    </div>
+                    <div id="lists" class="hiddenDiv">
+                    	 <h1>Nimekirjad</h1>
+                        <h2>&nbsp;</h2>
+                    </div>
+                    <div id="realTime" class="hiddenDiv">
+                    	 <h1>Reaalaja andmed</h1>
+                        <h2>&nbsp;</h2>
+                    </div>
+                    <div id="statistics" class="hiddenDiv">
+                    	<input type="button" value="Print" onClick="window.print()" id="print-button">
+                        <h1><img src="chart-of-the-day-ipad-unit-sales-oct-2012.jpg" width="600" height="400"></h1>
                     </div>
                 </div>
 
