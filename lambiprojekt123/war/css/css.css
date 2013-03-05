@@ -46,6 +46,15 @@ input.button{
 	display: block;
 
 }
+h1{
+	text-align: center;
+}
+.error{
+	color: red;
+}
+span.error{
+	position: absolute;
+}
 input.sign{
 	width: 50px;
 }

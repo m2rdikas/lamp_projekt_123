@@ -41,8 +41,10 @@
                     </div>
                     <div id="candidate" class="hiddenDiv">
                     	<h1>Kandideeri</h1>
-                    	<label>Eesnimi: </label><input type="text" name="firstName">
-                    	<label>Perenimi: </label><input type="text" name="lastName">
+                    	<label id="firstNameLabel">Eesnimi: </label><input type="text" id="firstName">
+                    	<span class="errorMessage" id="firstNameError"></span><br>
+                    	<label id="lastNameLabel">Perenimi: </label><input type="text" id="lastName">
+                    	<span class="errorMessage" id="lastNameError"></span><br>
                     	<label>Piirkond: </label><select>
   												 	<option value="harjumaa">Harju maakond</option>
   												 	<option value="hiiu">Hiiu maakond</option>
@@ -60,8 +62,9 @@
  												 	<option value="viljandi">Viljandi maakond</option>
  												 	<option value="voru">Võru maakond</option>
 												 </select><br>
-                        <label>Erakond: </label><input type="text" name="party">
-                         <input type="button" class="button" value="KANDIDEERI !">
+                        <label id="partyLabel">Erakond: </label><input type="text" id="party">
+                        <span class="errorMessage" id="partyError"></span><br>
+                         <input type="button" class="button" value="KANDIDEERI !" onclick="setCandidate()">
                          <input type="button" class="button" value="Muuda kandidatuuri">
                          <input type="button" class="button" value="Tühista kandidatuur">
                     </div>
