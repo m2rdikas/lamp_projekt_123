@@ -5,8 +5,9 @@
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel='stylesheet' href='css/css.css' type='text/css' title="default"/>
-        <script type="text/javascript" language="Javascript" src="js/scripts.js"></script>
         <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" language="Javascript" src="js/scripts.js"></script>
+        <script type="text/javascript" language="Javascript" src="js/scripts2.js"></script>
     </head>
     <body>
         <div id="wrap">
@@ -76,6 +77,63 @@
                     <div id="search" class="hiddenDiv">
                     	<h1>Otsi</h1>
                         <h2>&nbsp;</h2>
+                        <input class="otsivalik" type="radio" name="radiogroup1" value="byCanditate">Kanditaadi järgi
+                        <input class="otsivalik" type="radio" name="radiogroup1" value="byRegion">Regiooni järgi
+                        <input class="otsivalik" type="radio" name="radiogroup1" value="byParty">Partei järgi
+                        <input class="otsivalik" type="radio" name="radiogroup1" value="byPartyAndRegion">Partei ja regiooni järgi
+                        <hr>
+                        <div id="byCanditate">
+                        	<label>Kandiaadi nimi: </label><input type="text" >
+                        	<input type="submit" value="OTSI" class="searchSubmit">
+                        </div>
+                        <div id="byRegion">
+                        	<label>Regioon: </label><select>
+  												 	<option value="harjumaa">Harju maakond</option>
+  												 	<option value="hiiu">Hiiu maakond</option>
+  												 	<option value="ida-viru">Ida-Viru maakond</option>
+ 												 	<option value="jogeva">Jõgeva maakond</option>
+ 												 	<option value="jarva">Järva maakond</option>
+ 												 	<option value="laane">Lääne maakond</option>
+ 												 	<option value="l-viru">Lääne-Viru maakond</option>
+ 												 	<option value="polva">Põlva maakond</option>
+ 												 	<option value="parnu">Pärnu maakond</option>
+ 												 	<option value="rapla">Rapla maakond</option>
+ 												 	<option value="saare">Saare maakond</option>
+ 												 	<option value="tartu">Tartu maakond</option>
+ 												 	<option value="valga">Valga maakond</option>
+ 												 	<option value="viljandi">Viljandi maakond</option>
+ 												 	<option value="voru">Võru maakond</option>
+												 </select>
+                        	<input type="submit" value="OTSI" class="searchSubmit">                        
+                        </div>
+                        <div id="byParty">
+                        	<label>Partei: </label><input type="text" >
+                        	<input type="submit" value="OTSI" class="searchSubmit">                        
+                        </div>
+                        <div id="byPartyAndRegion">
+                        	<label>Partei: </label><input type="text" >
+                        	<label>Regiooni: </label><select>
+  												 	<option value="harjumaa">Harju maakond</option>
+  												 	<option value="hiiu">Hiiu maakond</option>
+  												 	<option value="ida-viru">Ida-Viru maakond</option>
+ 												 	<option value="jogeva">Jõgeva maakond</option>
+ 												 	<option value="jarva">Järva maakond</option>
+ 												 	<option value="laane">Lääne maakond</option>
+ 												 	<option value="l-viru">Lääne-Viru maakond</option>
+ 												 	<option value="polva">Põlva maakond</option>
+ 												 	<option value="parnu">Pärnu maakond</option>
+ 												 	<option value="rapla">Rapla maakond</option>
+ 												 	<option value="saare">Saare maakond</option>
+ 												 	<option value="tartu">Tartu maakond</option>
+ 												 	<option value="valga">Valga maakond</option>
+ 												 	<option value="viljandi">Viljandi maakond</option>
+ 												 	<option value="voru">Võru maakond</option>
+												 </select>
+                        	<input type="submit" value="OTSI" class="searchSubmit">
+                        </div>
+                        <div id="searchResults">
+                        	<h1>Tulemused</h1>
+                        </div>
                     </div>
                     <div id="lists" class="hiddenDiv">
                     	 <h1>Nimekirjad</h1>
