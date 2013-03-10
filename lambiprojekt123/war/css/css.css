@@ -1,6 +1,7 @@
 @page{
 	size: portrait;
 }
+* {margin:0;padding:0;}
 html, body {
 	font-family: arial, sans-serif;
 	font-size: 12px;
@@ -75,8 +76,10 @@ div.hiddenDiv{
 }
 #header {
 	position: relative;
-	width:960px; height:200px;
+	width:960px; height:140px;
 	margin: 0 auto;
+	padding-top: 60px;
+	
 }
 #header #login {
 	height: 100%;
@@ -84,6 +87,8 @@ div.hiddenDiv{
 	position: absolute;
 	top:0;
 	right:0;
+	padding-top: 60px;
+	
 }
 #main #container {
 	width:960px;
@@ -98,13 +103,47 @@ div.hiddenDiv{
 	float: right;
 	width: 750px; 
 	min-height: 400px;
+	position: relative;
 }
 #footer {
 	width:100%; 
 	height:40px;
 }
 #loader {
-	position: fixed;
-	top: 40%;
-	margin: 0 auto;
+	position: absolute;
+	top: 150px;
+	left: 100px;	
+}
+#searchResults table {
+	float: left;
+	cursor: pointer;
+}
+#searchResults #canditateInfo {float: right; width: 300px; height: 300px; border: 1px solid #f0f0f0}
+
+/* VEITS ILUSAMAKS*/
+#sidebar {border-right: 1px solid #f0f0f0; border-bottom: 1px solid #f0f0f0}
+#content {border-top: 1px solid #f0f0f0}
+#header {border-right: 1px solid #f0f0f0}
+input {margin: 3px;}
+
+/*STICKY FOOTER*/
+html, body {height: 100%;}
+
+#wrap {min-height: 100%;}
+
+#main {overflow:auto;
+	padding-bottom: 40px;}  /* must be same height as the footer */
+
+#footer {position: relative;
+	margin-top: -40px; /* negative value of footer height */
+	height: 40px;
+	clear:both;} 
+
+/*Opera Fix*/
+body:before {/* thanks to Maleika (Kohoutec)*/
+content:"";
+height:100%;
+float:left;
+width:0;
+margin-top:-32767px;/* thank you Erik J - negate effect of float*/
 }

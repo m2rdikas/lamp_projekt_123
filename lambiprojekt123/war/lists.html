@@ -1,78 +1,111 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>e-valimissüsteem - nimekirjad</title>
+<head>
+<title>e-valimissüsteem - nimekirjad</title>
 
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel='stylesheet' href='css/css.css' type='text/css' title="default"/>
-        <script src="js/sorttable.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel='stylesheet' href='css/css.css' type='text/css'
+	title="default" />
+<script src="js/sorttable.js"></script>
 </head>
-    <body>
-        <div id="wrap">
+<body>
+	<div id="wrap">
 
-            <div id="header">
-                <p class="head">e-valimissüsteem</p>
-                <div id="login">
-                    <form id="login_form">
-                        <label>Nimi: </label><input class="name" type="text" name="usrename"><br>
-                        <label>Parool: </label><input type="password" name="password"><br>
-                        <input type="submit" class="button sign"  value="Sign In">
-                    </form>
-                </div>
-            </div>
+		<div id="header">
+			<p class="head">e-valimissüsteem</p>
+			<div id="login">
+				<form id="login_form">
+					<label>Nimi: </label><input class="name" type="text"
+						name="usrename"><br> <label>Parool: </label><input
+						type="password" name="password"><br> <input
+						type="submit" class="button sign" value="Sign In">
+				</form>
+			</div>
+		</div>
 
-            <div id="main">
-                <div id="container">
-                    <div id="sidebar">
-                        <label class="tekst">Audenditud kasutajale:</label>
-                        	<input type="button" class="button" value="Kandideeri" onClick="window.location.href='candidate.html'">
-                        	<input type="button" class="button" value="Hääleta" onClick="window.location.href='vote.html'">
-                        <label class="tekst">Külastajale:</label>
-                            <input type="button" class="button" value="Otsi kandidaate" onClick="window.location.href='search.html'">
-                            <input type="button" class="button" value="Nimekirjad" onClick="window.location.href='lists.html'">
-                            <input type="button" class="button" value="Tulemused reaalajas" onClick="window.location.href='realTime.html'">
-                            <input type="button" class="button" value="Statistika" onClick="window.location.href='statistics.html'">
-                    </div>
-                  <div id="content">
-                        <h1>Nimekirjad</h1>
-                    <form name="form1" method="post" action="">
-                          <label>
-                          <select name=Nimekiri>
-  							<option>Vali...</option>
-  							<option>Piirkonna nimekiri</option>
-  							<option>Kogu nimekiri</option>
-						  </select>
-                          </label>
-                    </form>	
-                    
-                        <div align="left"><br >  
-                        Kandidaatide nimekiri: <br > <p>
-                        </div>
-                    <div>
-                        <table width="598" class="sortable">
-<tr>
-							  <th width="78">NR</th>
-			  <th width="189">PIIRKOND</th>
-			  <th width="315">KANDIDAAT</th>
-						  </tr>
-  								<tr><td><div align="center">123</div></td><td><div align="center">Harjumaa</div></td><td><div align="center">Juurikas, Juss</div></td></tr>
-  								<tr><td><div align="center">453</div></td><td><div align="center">Harjumaa</div></td><td><div align="center">Savipets, Jaan</div></td></tr>
-  								<tr><td><div align="center">12</div></td><td><div align="center">Harjumaa</div></td><td><div align="center">Milling, Viktor</div></td></tr>
-  								<tr><td><div align="center">554</div></td><td><div align="center">Saaremaa</div></td><td><div align="center">Kutt, Margus</div></td></tr>
-  								<tr><td><div align="center">804</div></td><td><div align="center">Läänemaa</div></td><td><div align="center">Hunt, Kaarel</div></td></tr>
-  								<tr><td><div align="center">341</div></td><td><div align="center">Tartumaa</div></td><td><div align="center">Küla, Tambet</div></td></tr>
-</table>
-                    </div>
-                  </div>
-                </div>
+		<div id="main">
+			<div id="container">
+				<div id="sidebar">
+					<label class="tekst">Audenditud kasutajale:</label> <input
+						type="button" class="button" value="Kandideeri"
+						onClick="window.location.href='candidate.html'"> <input
+						type="button" class="button" value="Hääleta"
+						onClick="window.location.href='vote.html'"> <label
+						class="tekst">Külastajale:</label> <input type="button"
+						class="button" value="Otsi kandidaate"
+						onClick="window.location.href='search.html'"> <input
+						type="button" class="button" value="Nimekirjad"
+						onClick="window.location.href='lists.html'"> <input
+						type="button" class="button" value="Tulemused reaalajas"
+						onClick="window.location.href='realTime.html'"> <input
+						type="button" class="button" value="Statistika"
+						onClick="window.location.href='statistics.html'">
+				</div>
+				<div id="content">
+					<h1>Nimekirjad</h1>
+					<form name="form1" method="post" action="">
+						<label> <select name=Nimekiri>
+								<option>Vali...</option>
+								<option>Piirkonna nimekiri</option>
+								<option>Kogu nimekiri</option>
+						</select>
+						</label>
+					</form>
 
-            </div>
+					<div align="left">
+						<br> Kandidaatide nimekiri: <br>
+						<p>
+					</div>
+					<div>
+						<table width="598" class="sortable">
+							<tr>
+								<th width="78">NR</th>
+								<th width="189">PIIRKOND</th>
+								<th width="315">KANDIDAAT</th>
+							</tr>
+							<tr>
+								<td><div align="center">123</div></td>
+								<td><div align="center">Harjumaa</div></td>
+								<td><div align="center">Juurikas, Juss</div></td>
+							</tr>
+							<tr>
+								<td><div align="center">453</div></td>
+								<td><div align="center">Harjumaa</div></td>
+								<td><div align="center">Savipets, Jaan</div></td>
+							</tr>
+							<tr>
+								<td><div align="center">12</div></td>
+								<td><div align="center">Harjumaa</div></td>
+								<td><div align="center">Milling, Viktor</div></td>
+							</tr>
+							<tr>
+								<td><div align="center">554</div></td>
+								<td><div align="center">Saaremaa</div></td>
+								<td><div align="center">Kutt, Margus</div></td>
+							</tr>
+							<tr>
+								<td><div align="center">804</div></td>
+								<td><div align="center">Läänemaa</div></td>
+								<td><div align="center">Hunt, Kaarel</div></td>
+							</tr>
+							<tr>
+								<td><div align="center">341</div></td>
+								<td><div align="center">Tartumaa</div></td>
+								<td><div align="center">Küla, Tambet</div></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
 
-        </div>
+		</div>
 
-        <div id="footer">
-            <p>Veebirakenduste loomise projekt: Mart Vellak, Allar Vallaots, Martin Reilent 2013</p>
-        </div>
+	</div>
 
-    </body>
+	<div id="footer">
+		<p>Veebirakenduste loomise projekt: Mart Vellak, Allar Vallaots,
+			Martin Reilent 2013</p>
+	</div>
+
+</body>
 </html>
