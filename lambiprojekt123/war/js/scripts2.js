@@ -90,12 +90,14 @@ function updateSearch (that) {
 			  
 //			 console.log(html);
 			    $("#searchResults").show();
+			    
 			    $("#searchResults").html(html);
 			    
 			});
 	}
 
 $(document).ready(function (){
+	$("#loader").hide();
 	$("#search div").hide();
 	$("#search #searchResults").hide();
 	$("input[name=radiogroup1]:radio").change(function (){
@@ -107,10 +109,12 @@ $(document).ready(function (){
 	
 	$(".searchSubmit").click( function () {
 		var that = $(this);
+		$("#loader").show();
 		var timeoutId = window.setTimeout(
 				function () {
 					
 					updateSearch(that);
+					$("#loader").hide();
 				},1000
 		);
 	});

@@ -3,7 +3,7 @@ function changeContent(divId){
 	document.getElementById(divId).style.display="inline"
 }
 function setDisplayNone(){
-	document.getElementById('content').style.display="none";
+	document.getElementById('content1').style.display="none";
 	document.getElementById('candidate').style.display="none";
 	document.getElementById('vote').style.display="none";
 	document.getElementById('search').style.display="none";
@@ -17,7 +17,7 @@ function validateNotEmpty(elemId){
 		document.getElementById(elemId).className="error";
 		document.getElementById(elemId + "Label").className="error";
 		document.getElementById(elemId + "Error").className="error";
-		document.getElementById(elemId + "Error").innerHTML = "Väli on kohustuslik";
+		document.getElementById(elemId + "Error").innerHTML = "VÃ¤li on kohustuslik";
 		return false;
 	} else {
 		document.getElementById(elemId).className="";

@@ -103,3 +103,8 @@ div.hiddenDiv{
 	width:100%; 
 	height:40px;
 }
+#loader {
+	position: fixed;
+	top: 40%;
+	margin: 0 auto;
+}
