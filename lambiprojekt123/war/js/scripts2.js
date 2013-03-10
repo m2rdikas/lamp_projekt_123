@@ -9,8 +9,10 @@ $(document).ready(function (){
 });
 	
 	$(".searchSubmit").click( function () {
+		var timeoutId = window.setTimeout(function () {
 		var currentId = $(this).parent().attr('id');
 		//alert(currentId);
+		
 		
 		if(currentId == "byCanditate"){
 			var jsonUrl = "candidate.json";
@@ -102,5 +104,6 @@ $(document).ready(function (){
 			    $("#searchResults").html(html);
 			    
 			});
+	},2000);
 	});
 });
