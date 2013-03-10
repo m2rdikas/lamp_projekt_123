@@ -1,16 +1,5 @@
-$(document).ready(function (){
-	$("#search div").hide();
-	$("#search #searchResults").hide();
-	$("input[name=radiogroup1]:radio").change(function (){
-		
-		$("#search div").hide();
-		$("#"+$(this).val()).show();
-		
-});
-	
-	$(".searchSubmit").click( function () {
-		var timeoutId = window.setTimeout(function () {
-		var currentId = $(this).parent().attr('id');
+function updateSearch (that) {
+		var currentId = $(that).parent().attr('id');
 		//alert(currentId);
 		
 		
@@ -104,6 +93,25 @@ $(document).ready(function (){
 			    $("#searchResults").html(html);
 			    
 			});
-	},2000);
+	}
+
+$(document).ready(function (){
+	$("#search div").hide();
+	$("#search #searchResults").hide();
+	$("input[name=radiogroup1]:radio").change(function (){
+		
+		$("#search div").hide();
+		$("#"+$(this).val()).show();
+		
+});
+	
+	$(".searchSubmit").click( function () {
+		var that = $(this);
+		var timeoutId = window.setTimeout(
+				function () {
+					
+					updateSearch(that);
+				},1000
+		);
 	});
 });
