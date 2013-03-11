@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>e-valimissüsteem</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel='stylesheet' href='css/css.css' type='text/css'
+	title="default" />
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" language="Javascript" src="js/scripts.js"></script>
+<script type="text/javascript" language="Javascript"
+	src="js/scripts2.js"></script>
+<script type="text/javascript" language="Javascript"
+	src="js/sorttable.js"></script>
+</head>
+<body>
+	<div id="wrap">
+
+		<div id="header">
+			<p class="head">e-valimissüsteem</p>
+			<div id="login">
+				<form id="login_form">
+					<label>Nimi: </label><input class="name" type="text"
+						name="usrename"><br> <label>Parool: </label><input
+						type="password" name="password"><br> <input
+						type="submit" class="button sign" value="Sign In">
+				</form>
+			</div>
+		</div>
+
+		<div id="main">
+			<div id="container">
+				<div id="sidebar">
+					<input type="button" class="button" value="Algusesse"
+						onclick="changeContent('content1')"> <label class="tekst">Audenditud
+						kasutajale:</label> <input type="button" class="button" value="Kandideeri"
+						onclick="changeContent('candidate')"> <input type="button"
+						class="button" value="Hääleta" onclick="changeContent('vote')">
+					<label class="tekst">Külastajale:</label> <input type="button"
+						class="button" value="Otsi kandidaate"
+						onclick="changeContent('search')"> <input type="button"
+						class="button" value="Nimekirjad" onclick="changeContent('lists')">
+					<input type="button" class="button" value="Tulemused reaalajas"
+						onclick="changeContent('realTime')"> <input type="button"
+						class="button" value="Statistika"
+						onclick="changeContent('statistics')">
+				</div>
+				<div id="content">
+					<div id="loader">
+						<img src="img/ajax-loader.gif">
+					</div>
+					<div id="content1">
+						<h1>Tere tulemast....</h1>
+						<h2>KUNA CONTENT PEAKS AINULT MUUTUMA SIIS MA EI TEA MIDA
+							VEEL TEHA</h2>
+						<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+							sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+							aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
+							duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+							takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+							dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+							eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+							sed diam voluptua. At vero eos et accusam et justo duo dolores et
+							ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+							Lorem ipsum dolor sit amet.</p>
+					</div>
+
+					<div id="candidate" class="hiddenDiv">
+						<h1>Kandideeri</h1>
+						<label id="firstNameLabel">Eesnimi: </label><input type="text"
+							id="firstName"> <span class="errorMessage"
+							id="firstNameError"></span><br> <label id="lastNameLabel">Perenimi:
+						</label><input type="text" id="lastName"> <span
+							class="errorMessage" id="lastNameError"></span><br> <label>Piirkond:
+						</label><select>
+							<option value="harjumaa">Harju maakond</option>
+							<option value="hiiu">Hiiu maakond</option>
+							<option value="ida-viru">Ida-Viru maakond</option>
+							<option value="jogeva">Jõgeva maakond</option>
+							<option value="jarva">Järva maakond</option>
+							<option value="laane">Lääne maakond</option>
+							<option value="l-viru">Lääne-Viru maakond</option>
+							<option value="polva">Põlva maakond</option>
+							<option value="parnu">Pärnu maakond</option>
+							<option value="rapla">Rapla maakond</option>
+							<option value="saare">Saare maakond</option>
+							<option value="tartu">Tartu maakond</option>
+							<option value="valga">Valga maakond</option>
+							<option value="viljandi">Viljandi maakond</option>
+							<option value="voru">Võru maakond</option>
+						</select><br> <label id="partyLabel">Erakond: </label><input
+							type="text" id="party"> <span class="errorMessage"
+							id="partyError"></span><br> <input type="button"
+							class="button" value="KANDIDEERI !" onclick="setCandidate()">
+						<input type="button" class="button" value="Muuda kandidatuuri">
+						<input type="button" class="button" value="Tühista kandidatuur">
+					</div>
+					<div id="vote" class="hiddenDiv">
+						<h1>Hääleta...</h1>
+						<h2>&nbsp;</h2>
+					</div>
+					<div id="search" class="hiddenDiv">
+						<h1>Otsi</h1>
+						<h2>&nbsp;</h2>
+						<input class="otsivalik" type="radio" name="radiogroup1"
+							value="byCanditate">Kanditaadi järgi <input
+							class="otsivalik" type="radio" name="radiogroup1"
+							value="byRegion">Regiooni järgi <input class="otsivalik"
+							type="radio" name="radiogroup1" value="byParty">Partei
+						järgi <input class="otsivalik" type="radio" name="radiogroup1"
+							value="byPartyAndRegion">Partei ja regiooni järgi
+						<hr>
+						<div id="byCanditate">
+							<label>Kandiaadi nimi: </label><input type="text"> <input
+								type="submit" value="OTSI" class="searchSubmit">
+						</div>
+						<div id="byRegion">
+							<label>Regioon: </label><select>
+								<option value="harjumaa">Harju maakond</option>
+								<option value="hiiu">Hiiu maakond</option>
+								<option value="ida-viru">Ida-Viru maakond</option>
+								<option value="jogeva">Jõgeva maakond</option>
+								<option value="jarva">Järva maakond</option>
+								<option value="laane">Lääne maakond</option>
+								<option value="l-viru">Lääne-Viru maakond</option>
+								<option value="polva">Põlva maakond</option>
+								<option value="parnu">Pärnu maakond</option>
+								<option value="rapla">Rapla maakond</option>
+								<option value="saare">Saare maakond</option>
+								<option value="tartu">Tartu maakond</option>
+								<option value="valga">Valga maakond</option>
+								<option value="viljandi">Viljandi maakond</option>
+								<option value="voru">Võru maakond</option>
+							</select> <input type="submit" value="OTSI" class="searchSubmit">
+						</div>
+						<div id="byParty">
+							<label>Partei: </label><input type="text"> <input
+								type="submit" value="OTSI" class="searchSubmit">
+						</div>
+						<div id="byPartyAndRegion">
+							<label>Partei: </label><input type="text"> <label>Regiooni:
+							</label><select>
+								<option value="harjumaa">Harju maakond</option>
+								<option value="hiiu">Hiiu maakond</option>
+								<option value="ida-viru">Ida-Viru maakond</option>
+								<option value="jogeva">Jõgeva maakond</option>
+								<option value="jarva">Järva maakond</option>
+								<option value="laane">Lääne maakond</option>
+								<option value="l-viru">Lääne-Viru maakond</option>
+								<option value="polva">Põlva maakond</option>
+								<option value="parnu">Pärnu maakond</option>
+								<option value="rapla">Rapla maakond</option>
+								<option value="saare">Saare maakond</option>
+								<option value="tartu">Tartu maakond</option>
+								<option value="valga">Valga maakond</option>
+								<option value="viljandi">Viljandi maakond</option>
+								<option value="voru">Võru maakond</option>
+							</select> <input type="submit" value="OTSI" class="searchSubmit">
+						</div>
+						<div id="searchResults">
+							<h1>Tulemused</h1>
+							
+						</div>
+
+					</div>
+					<div id="lists" class="hiddenDiv">
+						<h1>Nimekirjad</h1>
+						<form name="form1" method="post" action="">
+							<label> <select name=Nimekiri>
+									<option>Vali...</option>
+									<option>Piirkonna nimekiri</option>
+									<option>Kogu nimekiri</option>
+							</select>
+							</label>
+						</form>
+
+						<div align="left">
+							<br> Kandidaatide nimekiri: <br>
+							<p>
+						</div>
+						<div>
+							<table width="598" class="sortable">
+								<tr>
+									<th width="78">NR</th>
+									<th width="189">PIIRKOND</th>
+									<th width="315">KANDIDAAT</th>
+								</tr>
+								<tr>
+									<td><div align="center">123</div></td>
+									<td><div align="center">Harjumaa</div></td>
+									<td><div align="center">Juurikas, Juss</div></td>
+								</tr>
+								<tr>
+									<td><div align="center">453</div></td>
+									<td><div align="center">Harjumaa</div></td>
+									<td><div align="center">Savipets, Jaan</div></td>
+								</tr>
+								<tr>
+									<td><div align="center">12</div></td>
+									<td><div align="center">Harjumaa</div></td>
+									<td><div align="center">Milling, Viktor</div></td>
+								</tr>
+								<tr>
+									<td><div align="center">554</div></td>
+									<td><div align="center">Saaremaa</div></td>
+									<td><div align="center">Kutt, Margus</div></td>
+								</tr>
+								<tr>
+									<td><div align="center">804</div></td>
+									<td><div align="center">Läänemaa</div></td>
+									<td><div align="center">Hunt, Kaarel</div></td>
+								</tr>
+								<tr>
+									<td><div align="center">341</div></td>
+									<td><div align="center">Tartumaa</div></td>
+									<td><div align="center">Küla, Tambet</div></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div id="realTime" class="hiddenDiv">
+						<h1>Reaalaja andmed</h1>
+						<h2>&nbsp;</h2>
+					</div>
+					<div id="statistics" class="hiddenDiv">
+						<input type="button" value="Print" onClick="window.print()"
+							id="print-button">
+						<h1>
+							<img src="chart-of-the-day-ipad-unit-sales-oct-2012.jpg"
+								width="600" height="400">
+						</h1>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+
+	</div>
+
+	<div id="footer">
+		<p>Veebirakenduste loomise projekt: Mart Vellak, Allar Vallaots,
+			Martin Reilent 2013</p>
+	</div>
+
+</body>
+</html>

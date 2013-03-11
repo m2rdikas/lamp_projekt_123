@@ -1,0 +1,149 @@
+@page{
+	size: portrait;
+}
+* {margin:0;padding:0;}
+html, body {
+	font-family: arial, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: normal;
+}
+
+#main {
+	overflow:auto;
+}  /* must be same height as the footer */
+
+#footer {position: relative;
+	height: 150px;
+	clear:both;
+} 
+
+/*Opera Fix*/
+body:before {
+	content:"";
+	height:100%;
+	float:left;
+	width:0;
+	margin-top:-32767px;
+}
+p.head{
+	font-size: 40px;
+	font-weight: bold;
+}
+input.name{
+	margin-left: 12px;
+}
+input.button{
+	width: 130px;
+	height: 26px;
+	font-size: 1em;
+	background-color: #d9d9d9;
+	padding-left: 0px;
+	padding-right: 0px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	display: block;
+
+}
+h1{
+	text-align: center;
+}
+.error{
+	color: red;
+}
+span.error{
+	position: absolute;
+}
+input.sign{
+	width: 50px;
+}
+label.tekst{
+	font-size: 14px;
+	font-weight: bold;
+	margin-top: 50px;
+	display: block;
+}
+label.tekst:first-child {
+	margin-top: 0px;
+}
+div {
+	text-align: center;
+}
+div.hiddenDiv{
+	display: none;
+}
+#header {
+	position: relative;
+	width:960px; height:140px;
+	margin: 0 auto;
+	padding-top: 60px;
+	
+}
+#header #login {
+	height: 100%;
+	width:300px;
+	position: absolute;
+	top:0;
+	right:0;
+	padding-top: 60px;
+	
+}
+#main #container {
+	width:960px;
+	margin: 0 auto;
+}
+#main #container #sidebar {
+	float: left;
+	width: 200px; 
+	min-height: 400px;
+}
+#main #container #content {
+	float: right;
+	width: 750px; 
+	min-height: 400px;
+	position: relative;
+}
+#footer {
+	width:100%; 
+	height:40px;
+}
+#loader {
+	position: absolute;
+	top: 150px;
+	left: 100px;	
+}
+#searchResults table {
+	float: left;
+	cursor: pointer;
+}
+#searchResults #canditateInfo {float: right; width: 300px; height: 300px; border: 1px solid #f0f0f0}
+
+/* VEITS ILUSAMAKS*/
+#sidebar {border-right: 1px solid #f0f0f0; border-bottom: 1px solid #f0f0f0}
+#content {border-top: 1px solid #f0f0f0}
+#header {border-right: 1px solid #f0f0f0}
+input {margin: 3px;}
+
+/*STICKY FOOTER*/
+html, body {height: 100%;}
+
+#wrap {min-height: 100%;}
+
+#main {overflow:auto;
+	padding-bottom: 40px;}  /* must be same height as the footer */
+
+#footer {position: relative;
+	margin-top: -40px; /* negative value of footer height */
+	height: 40px;
+	clear:both;} 
+
+/*Opera Fix*/
+body:before {/* thanks to Maleika (Kohoutec)*/
+content:"";
+height:100%;
+float:left;
+width:0;
+margin-top:-32767px;/* thank you Erik J - negate effect of float*/
+}
