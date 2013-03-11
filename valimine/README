@@ -1,0 +1,8 @@
+See on uus projekt, mis on google app enginest sõltumatu.
+Projekt valimine on eclipses loodud dynamic web project
+Selle käivitamiseks tuleb enda eclipses tööle panna tomcati server. 7.0
+New -> Other... -> Server -> Server type Tomcat v7.0 Server
+Window -> Show view -> Servers
+Serveri view sealt valida server -> parem klikk -> Add and remove -> lisada valimine projekt
+Ja siis saab serverile run teha
+Aadress on localhost:8081/valimine/
