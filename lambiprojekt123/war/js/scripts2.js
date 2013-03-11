@@ -39,7 +39,7 @@ function updateSearch (that) {
 //			 console.log(data);
 			  
 			  if(currentId == "byCanditate"){ 
-			    html += "<tr>" +
+			    html += "<tr onclick=\"displayInfo(this);\">" +
 			    			"<td>" + data.id + "</td>" +
 			    			"<td>" + data.person.name + "</td>" +
 			    			"<td>" + data.party.name + "</td>" +
@@ -50,7 +50,7 @@ function updateSearch (that) {
 			  else if (currentId == "byRegion" ){
 				  console.log(data.candidates);
 				  for (var i = 0; i < data.candidates.length;i++) {
-					html += "<tr>" +
+					html += "<tr onclick=\"displayInfo(this);\">" +
 		    			"<td>" + data.candidates[i].id + "</td>" +
 		    			"<td>" + data.candidates[i].person.name + "</td>" +
 		    			"<td>" + data.candidates[i].party.name + "</td>" +
@@ -63,7 +63,7 @@ function updateSearch (that) {
 			  else if (currentId == "byParty" ){
 				  console.log(data.candidates);
 				  for (var i = 0; i < data.candidates.length;i++) {
-					html += "<tr>" +
+					html += "<tr onclick=\"displayInfo(this);\">" +
 		    			"<td>" + data.candidates[i].id + "</td>" +
 		    			"<td>" + data.candidates[i].person.name + "</td>" +
 		    			"<td>" + "PARTEII" + "</td>" +
@@ -76,7 +76,7 @@ function updateSearch (that) {
 			  else if (currentId == "byPartyAndRegion") {
 				  console.log(data.candidates);
 				  for (var i = 0; i < data.candidates.length;i++) {
-					html += "<tr>" +
+					html += "<tr onclick=\"displayInfo(this);\">" +
 		    			"<td>" + data.candidates[i].id + "</td>" +
 		    			"<td>" + data.candidates[i].person.name + "</td>" +
 		    			"<td>" + "PARTEII" + "</td>" +
@@ -87,14 +87,24 @@ function updateSearch (that) {
 				  html += "</table>";
 				  
 			  }
-			  
+			  	html += "<div id=\"canditateInfo\"></div>";
 //			 console.log(html);
 			    $("#searchResults").show();
 			    
 			    $("#searchResults").html(html);
-			    
+			    $("#canditateInfo").hide();
 			});
 	}
+function displayInfo(that) {
+		var infoInside = "<h1>Info</h1><hr>";
+		$(that).children().each(function () {
+			infoInside += "<p>" + $(this).html() + "</p>";
+		});
+//		console.log(infoInside);
+		$("#canditateInfo").html(infoInside);
+		$("#canditateInfo").show();
+	
+}
 
 $(document).ready(function (){
 	$("#loader").hide();
@@ -118,4 +128,5 @@ $(document).ready(function (){
 				},1000
 		);
 	});
+
 });
