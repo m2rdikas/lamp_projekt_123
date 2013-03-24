@@ -776,7 +776,7 @@ standard deployment descriptor.
   <javaee:display-name>Archetype Created Web Application</javaee:display-name>
   <servlet>
 		<servlet-name>HelloServlet</servlet-name>
-		<servlet-class>HelloServlet</servlet-class>
+		<servlet-class>servlets.HelloServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>HelloServlet</servlet-name>
