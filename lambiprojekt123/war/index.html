@@ -24,7 +24,7 @@
 					<label>Nimi: </label><input class="name" type="text"
 						name="usrename"><br> <label>Parool: </label><input
 						type="password" name="password"><br> <input
-						type="submit" class="button sign" value="Sign In">
+						type="submit" class="button sign" method="POST" value="Sign In">
 				</form>
 			</div>
 		</div>
@@ -36,11 +36,11 @@
 						onclick="changeContent('content1')"> <label class="tekst">Audenditud
 						kasutajale:</label> <input type="button" class="button" value="Kandideeri"
 						onclick="changeContent('candidate')"> <input type="button"
-						class="button" value="Hääleta" onclick="changeContent('vote')">
+						class="button" value="Hääleta" onClick="changeContent('vote')">
 					<label class="tekst">Külastajale:</label> <input type="button"
 						class="button" value="Otsi kandidaate"
 						onclick="changeContent('search')"> <input type="button"
-						class="button" value="Nimekirjad" onclick="changeContent('lists')">
+						class="button" value="Nimekirjad" onClick="changeContent('lists')">
 					<input type="button" class="button" value="Tulemused reaalajas"
 						onclick="changeContent('realTime')"> <input type="button"
 						class="button" value="Statistika"
@@ -92,7 +92,7 @@
 						</select><br> <label id="partyLabel">Erakond: </label><input
 							type="text" id="party"> <span class="errorMessage"
 							id="partyError"></span><br> <input type="button"
-							class="button" value="KANDIDEERI !" onclick="setCandidate()">
+							class="button" value="KANDIDEERI !" method="POST" onClick="setCandidate()">
 						<input type="button" class="button" value="Muuda kandidatuuri">
 						<input type="button" class="button" value="Tühista kandidatuur">
 					</div>
@@ -113,7 +113,7 @@
 						<hr>
 						<div id="byCanditate">
 							<label>Kandiaadi nimi: </label><input type="text"> <input
-								type="submit" value="OTSI" class="searchSubmit">
+								type="submit" value="OTSI" method="GET" class="searchSubmit">
 						</div>
 						<div id="byRegion">
 							<label>Regioon: </label><select>
@@ -132,11 +132,11 @@
 								<option value="valga">Valga maakond</option>
 								<option value="viljandi">Viljandi maakond</option>
 								<option value="voru">Võru maakond</option>
-							</select> <input type="submit" value="OTSI" class="searchSubmit">
+							</select> <input type="submit" value="OTSI" method="GET" class="searchSubmit">
 						</div>
 						<div id="byParty">
 							<label>Partei: </label><input type="text"> <input
-								type="submit" value="OTSI" class="searchSubmit">
+								type="submit" value="OTSI" method="GET" class="searchSubmit">
 						</div>
 						<div id="byPartyAndRegion">
 							<label>Partei: </label><input type="text"> <label>Regiooni:
@@ -156,7 +156,7 @@
 								<option value="valga">Valga maakond</option>
 								<option value="viljandi">Viljandi maakond</option>
 								<option value="voru">Võru maakond</option>
-							</select> <input type="submit" value="OTSI" class="searchSubmit">
+							</select> <input type="submit" value="OTSI" method="GET" class="searchSubmit">
 						</div>
 						<div id="searchResults">
 							<h1>Tulemused</h1>
