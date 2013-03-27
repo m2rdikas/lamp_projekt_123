@@ -1,5 +1,0 @@
-c:\users\kasutaja\documents\visual studio 2010\Projects\RestService\RestService\bin\RestService.dll
-c:\users\kasutaja\documents\visual studio 2010\Projects\RestService\RestService\bin\RestService.pdb
-c:\users\kasutaja\documents\visual studio 2010\Projects\RestService\RestService\obj\Debug\ResolveAssemblyReference.cache
-c:\users\kasutaja\documents\visual studio 2010\Projects\RestService\RestService\obj\Debug\RestService.dll
-c:\users\kasutaja\documents\visual studio 2010\Projects\RestService\RestService\obj\Debug\RestService.pdb
