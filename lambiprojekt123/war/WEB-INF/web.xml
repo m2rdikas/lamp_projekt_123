@@ -24,7 +24,7 @@
  </servlet-mapping>
  	  <servlet>
 	    <servlet-name>Jersey Web Application</servlet-name>
-	     <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+	     <servlet-class>ut.veeb.lambiprojekt123.Lambiprojekt123RestServlet</servlet-class>
 	     <init-param>
 	     <param-name>com.sun.jersey.config.property.packages</param-name>
 	     <param-value>com.grallandco.lambiprojekt123.service.rest.impl</param-value>
