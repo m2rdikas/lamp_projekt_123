@@ -7,9 +7,13 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.appengine.labs.repackaged.org.json.JSONObject;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 public class DatabaseOperations {
 	
-	public List<String> findCandidatesByParty(String party){
+	public String findCandidatesByParty(String party){
 		DataBase.ensure();
 		List<String> candidatesByParty = new ArrayList<String>();
 		try {
@@ -24,10 +28,10 @@ public class DatabaseOperations {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return candidatesByParty;
+		return convertToJson(candidatesByParty);
 		
 	}
-	public List<String> findCandidatesByPartyAndRegion(String party, String region){
+	public String findCandidatesByPartyAndRegion(String party, String region){
 		DataBase.ensure();
 		List<String> candidatesByPartyAndRegion = new ArrayList<String>();
 		try {
@@ -42,10 +46,10 @@ public class DatabaseOperations {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return candidatesByPartyAndRegion;
+		return convertToJson(candidatesByPartyAndRegion);
 		
 	}
-	public List<String> findCandidatesByRegion(String region){
+	public String findCandidatesByRegion(String region){
 		DataBase.ensure();
 		List<String> candidatesByRegion = new ArrayList<String>();
 		try {
@@ -60,9 +64,23 @@ public class DatabaseOperations {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return candidatesByRegion;
+		return convertToJson(candidatesByRegion);
 	}
-	public void updateDB(){
-		
+	public void updateDB(String firstName, String lastName, Integer candidateId, String id, String party, String county){
+		DataBase.ensure();
+		try{
+			Connection conn = DataBase.getConnection();
+			Statement sta = conn.createStatement();
+			sta.executeUpdate("INSERT INTO Candidates (first_name, last_name, candidate_id, id, party, county) VALUES('"+firstName+"', '"+lastName+"',"+candidateId+", '"+id+"', '"+party+"', '"+county+"')");
+			sta.close();
+			conn.close();
+		} catch (SQLException e){
+			e.printStackTrace();
+		}
+	}
+	public static String convertToJson(List<String> dataList){
+		Gson gson = new GsonBuilder().setPrettyPrinting().create();
+		String json = gson.toJson(dataList);
+		return json;
 	}
 }

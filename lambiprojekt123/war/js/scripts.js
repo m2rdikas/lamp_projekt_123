@@ -27,7 +27,10 @@ function validateNotEmpty(elemId){
 	}
 }
 function setCandidate(){
-	validateNotEmpty('firstName');
-	validateNotEmpty('lastName');
-	validateNotEmpty('party');
+	if(validateNotEmpty('firstName') || validateNotEmpty('lastName') || validateNotEmpty('party')){
+		$.get('/lambiprojekt123', function(data) {
+			  $('.result').html(data);
+			  alert('Load was performed.');
+			});
+	} 
 }
