@@ -23,7 +23,7 @@ public class DataBase {
 							+ "first_name VARCHAR(100)," // eesnimi
 							+ "last_name VARCHAR(100)," // pereknimi
 							+ "candidate_id INTEGER," //kandidaadi number
-							+ "id INTEGER," //isikukood
+							+ "id VARCHAR(11)," //isikukood
 							+ "party VARCHAR(100)," //partei nimi
 							+ "county VARCHAR(100))"); //maakond
 					sta.executeUpdate("INSERT INTO Candidates (first_name, last_name, candidate_id, id, party, county) VALUES('Eduard', 'Ekskavaator',1, 38908120987, 'SINISED', 'TARTUMAA')");
