@@ -1,0 +1,6 @@
+Rakenduse käivitamine
+1) Kasutades eclipset installida Google App Engine plugin. vt https://developers.google.com/appengine/docs/java/tools/eclipse
+2) Tõmmata githubist projekti kood: https://github.com/m2rdikas/lamp_projekt_123 
+3) Eclipses teha tõmmatud koodist GoogleWebApp projekt
+4) Run as -> Web Application
+5) localhost:8888 asub rakendus

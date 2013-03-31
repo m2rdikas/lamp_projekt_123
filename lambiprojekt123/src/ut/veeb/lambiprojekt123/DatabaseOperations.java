@@ -12,7 +12,7 @@ import com.google.gson.GsonBuilder;
 
 public class DatabaseOperations {
 	
-	public String findCandidatesByParty(String party){
+	public static String findCandidatesByParty(String party){
 		DataBase.ensure();
 		List<String> candidatesByParty = new ArrayList<String>();
 		try {
@@ -39,7 +39,7 @@ public class DatabaseOperations {
 		return convertToJson(candidatesByParty);
 		
 	}
-	public String findCandidatesByPartyAndRegion(String party, String region){
+	public static String findCandidatesByPartyAndRegion(String party, String region){
 		DataBase.ensure();
 		List<String> candidatesByPartyAndRegion = new ArrayList<String>();
 		try {
@@ -57,7 +57,7 @@ public class DatabaseOperations {
 		return convertToJson(candidatesByPartyAndRegion);
 		
 	}
-	public String findCandidatesByRegion(String region){
+	public static String findCandidatesByRegion(String region){
 		DataBase.ensure();
 		List<String> candidatesByRegion = new ArrayList<String>();
 		try {
@@ -79,7 +79,10 @@ public class DatabaseOperations {
 		try{
 			Connection conn = DataBase.getConnection();
 			Statement sta = conn.createStatement();
-			sta.executeUpdate("INSERT INTO Candidates (first_name, last_name, candidate_id, id, party, county) VALUES('"+firstName+"', '"+lastName+"',"+candidateId+", '"+id+"', '"+party+"', '"+county+"')");
+			ResultSet rs = sta.executeQuery("SELECT * FROM Candidates WHERE first_name='"+firstName+"' AND last_name='"+lastName+"'");
+			if(rs.getString("first_name").isEmpty()){
+				sta.executeUpdate("INSERT INTO Candidates (first_name, last_name, candidate_id, id, party, county) VALUES('"+firstName+"', '"+lastName+"',"+candidateId+", '"+id+"', '"+party+"', '"+county+"')");
+			}
 			sta.close();
 			conn.close();
 		} catch (SQLException e){
