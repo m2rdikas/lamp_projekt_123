@@ -7,7 +7,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.google.appengine.labs.repackaged.org.json.JSONObject;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -21,7 +20,16 @@ public class DatabaseOperations {
 			Statement sta = conn.createStatement();
 			ResultSet rs = sta.executeQuery("SELECT * FROM Candidates WHERE party='"+party+"'");
 			while(rs.next()){
-				candidatesByParty.add(rs.getString("first_name") +";"+rs.getString("last_name"));
+				DBObject object = new DBObject();
+				object.setFirstName(rs.getString("first_name"));
+				object.setLastName(rs.getString("last_name"));
+				object.setCandidateId(rs.getInt("candidate_id"));
+				object.setId(rs.getString("id"));
+				object.setParty(rs.getString("party"));
+				object.setCounty(rs.getString("county"));
+				Gson gson = new GsonBuilder().setPrettyPrinting().create();
+				String json = gson.toJson(object);
+				candidatesByParty.add(json);
 			}
 			sta.close();
 			conn.close();
