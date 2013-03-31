@@ -27,10 +27,27 @@ function validateNotEmpty(elemId){
 	}
 }
 function setCandidate(){
-	if(validateNotEmpty('firstName') || validateNotEmpty('lastName') || validateNotEmpty('party')){
+	var isValid;
+	isValid = validateNotEmpty('firstName');
+	if(isValid){
+		isValid = validateNotEmpty('lastName');
+		if(isValid){
+			isValid = validateNotEmpty('party');
+		} else {
+			validateNotEmpty('party');
+		}
+	} else {
+		validateNotEmpty('lastName');
+		validateNotEmpty('party');
+	}
+	if(isValid){
 		$.get('/lambiprojekt123', function(data) {
 			  $('.result').html(data);
-			  alert('Load was performed.');
+			  alert('Edukalt kandideeritud.');
 			});
+		$('#firstName').val('');
+		$('#lastName').val('');
+		$('#party').val('');
 	} 
+	
 }
