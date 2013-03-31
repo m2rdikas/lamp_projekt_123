@@ -1,9 +1,10 @@
-package com.grallandco.lambiprojekt123.service.rest.impl;
-import javax.ws.rs.Path;
+package ut.veeb.lambiprojekt123;
+
 import javax.ws.rs.GET;
+import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 @Path("/hr/")
-public class CanditateResource {
+public class Lambiprojekt123RestServlet {
 	  
 	 @GET
 	 @Produces("text/plain")  //("application/json")
