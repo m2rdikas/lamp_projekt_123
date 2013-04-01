@@ -14,27 +14,32 @@ function ChangeContentToHash () {
 		}
 }
 function updateSearch (that, tulemus) {
+		try {
 		var currentId = $(that).parent().attr('id');
+		}
+		catch (Exception) {
+			var currentId = that;
+		}
 		//alert(currentId);
 		
 		
-		if(currentId == "byCanditate"){
-			var jsonUrl = "candidate.json";
-		}
-		else if (currentId == "byRegion"){
-			var jsonUrl = "findCandidatesByRegion.json";
-			
-		}
-		else if (currentId == "byParty"){
-			var jsonUrl = "findCandidatesByParty.json";
-			
-		}
-		else if(currentId == "byPartyAndRegion"){
-			var jsonUrl = "findCandidatesByPartyAndRegion.json";
-		}
-		else {
-			alert("VIGA!");
-			}
+//		if(currentId == "byCanditate"){
+//			var jsonUrl = "candidate.json";
+//		}
+//		else if (currentId == "byRegion"){
+//			var jsonUrl = "findCandidatesByRegion.json";
+//			
+//		}
+//		else if (currentId == "byParty"){
+//			var jsonUrl = "findCandidatesByParty.json";
+//			
+//		}
+//		else if(currentId == "byPartyAndRegion"){
+//			var jsonUrl = "findCandidatesByPartyAndRegion.json";
+//		}
+//		else {
+//			alert("VIGA!");
+//			}
 		
 		//alert(json);
 		
@@ -167,6 +172,15 @@ $(document).ready(function (){
 	$("#loader").hide();
 	$("#search div").hide();
 	$("#search #searchResults").hide();
+	if(window.location.hash.indexOf("query=") != -1){
+		$.post('/lambiprojekt123?query='+ window.location.hash.split("=")[1], function(data) {
+//			  console.log(data);
+//			  data123 = data;
+			  updateSearch(window.location.hash.split(":")[1], data)
+			  //alert(query);
+			
+			});
+	}
 	$("input[name=radiogroup1]:radio").change(function (){
 		
 		$("#search div").hide();
