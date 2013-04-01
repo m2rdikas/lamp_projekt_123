@@ -62,6 +62,31 @@ public class DatabaseOperations {
 		return convertToJson(candidatesByPartyAndRegion);
 		
 	}
+	public static String getEverything(){
+		DataBase.ensure();
+		List<DBObject> candidatesByPartyAndRegion = new ArrayList<DBObject>();
+		try {
+			Connection conn = DataBase.getConnection();
+			Statement sta = conn.createStatement();
+			ResultSet rs = sta.executeQuery("SELECT * FROM Candidates");
+			while(rs.next()){
+				DBObject object = new DBObject();
+				object.setFirstName(rs.getString("first_name"));
+				object.setLastName(rs.getString("last_name"));
+				object.setCandidateId(rs.getInt("candidate_id"));
+				object.setId(rs.getString("id"));
+				object.setParty(rs.getString("party"));
+				object.setCounty(rs.getString("county"));
+				candidatesByPartyAndRegion.add(object);
+			}
+			sta.close();
+			conn.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return convertToJson(candidatesByPartyAndRegion);
+		
+	}
 	public static String findCandidatesByRegion(String region){
 		DataBase.ensure();
 		List<DBObject> candidatesByRegion = new ArrayList<DBObject>();
@@ -69,6 +94,31 @@ public class DatabaseOperations {
 			Connection conn = DataBase.getConnection();
 			Statement sta = conn.createStatement();
 			ResultSet rs = sta.executeQuery("SELECT * FROM Candidates WHERE county='"+region+"'");
+			while(rs.next()){
+				DBObject object = new DBObject();
+				object.setFirstName(rs.getString("first_name"));
+				object.setLastName(rs.getString("last_name"));
+				object.setCandidateId(rs.getInt("candidate_id"));
+				object.setId(rs.getString("id"));
+				object.setParty(rs.getString("party"));
+				object.setCounty(rs.getString("county"));
+				candidatesByRegion.add(object);
+			}
+			sta.close();
+			conn.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return convertToJson(candidatesByRegion);
+	}
+	public static String findCandidatesByName(String name){
+		DataBase.ensure();
+		List<DBObject> candidatesByRegion = new ArrayList<DBObject>();
+		try {
+				
+			Connection conn = DataBase.getConnection();
+			Statement sta = conn.createStatement();
+			ResultSet rs = sta.executeQuery("SELECT * FROM Candidates WHERE first_name='"+name+"'");
 			while(rs.next()){
 				DBObject object = new DBObject();
 				object.setFirstName(rs.getString("first_name"));

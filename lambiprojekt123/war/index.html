@@ -7,12 +7,15 @@
 <link rel='stylesheet' href='css/css.css' type='text/css'
 	title="default" />
 <link rel='stylesheet' href='css/print.css' type='text/css' media="print"/>
+<link href="css/jquery-ui-1.10.2.custom.css" rel="stylesheet">
 <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" language="Javascript" src="js/scripts.js"></script>
 <script type="text/javascript" language="Javascript"
 	src="js/scripts2.js"></script>
 <script type="text/javascript" language="Javascript"
 	src="js/sorttable.js"></script>
+		<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/jquery-ui-1.10.2.custom.js"></script>
 </head>
 <body>
 	<div id="wrap">
@@ -112,7 +115,7 @@
 							value="byPartyAndRegion">Partei ja regiooni järgi
 						<hr>
 						<div id="byCanditate">
-							<label>Kandiaadi nimi: </label><input type="text"> <input
+							<label>Kandiaadi nimi: </label><input id="byname" type="text"> <input
 								type="submit" value="OTSI" method="GET" class="searchSubmit">
 						</div>
 						<div id="byRegion">

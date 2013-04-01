@@ -26,8 +26,9 @@ public class DataBase {
 							+ "id VARCHAR(11)," //isikukood
 							+ "party VARCHAR(100)," //partei nimi
 							+ "county VARCHAR(100))"); //maakond
-					sta.executeUpdate("INSERT INTO Candidates (first_name, last_name, candidate_id, id, party, county) VALUES('Eduard', 'Ekskavaator',1, 38908120987, 'SINISED', 'TARTUMAA')");
-					sta.executeUpdate("INSERT INTO Candidates (first_name, last_name, candidate_id, id, party, county) VALUES('Oskar', 'Ekskavaator',2, 39008120987, 'SINISED', 'HARJUMAA')");
+					sta.executeUpdate("INSERT INTO Candidates (first_name, last_name, candidate_id, id, party, county) VALUES('Eduard', 'Ekskavaator',1, 38908120987, 'SINISED', 'Rapla maakond')");
+					sta.executeUpdate("INSERT INTO Candidates (first_name, last_name, candidate_id, id, party, county) VALUES('Oskar', 'Ekskavaator',2, 39008120987, 'PUNASED', 'HARJUMAA')");
+					sta.executeUpdate("INSERT INTO Candidates (first_name, last_name, candidate_id, id, party, county) VALUES('Oskar', 'Ekskavaator',3, 39008120987, 'SINISED', 'HARJUMAA')");
 					sta.close();
 				}
 				conn.close();
