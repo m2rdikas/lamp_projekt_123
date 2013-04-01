@@ -153,11 +153,12 @@ $(document).ready(function (){
 		}
 				  }
 			  console.log(nimed);
+			  $( "#byname" ).autocomplete({
+					source: nimed,
+					minLength: 2
+				});
 			});
-		$( "#byname" ).autocomplete({
-			source: availableTags,
-			minLength: 2
-		});
+		
 			// Hover states on the static widgets
 			$( "#dialog-link, #icons li" ).hover(
 				function() {
