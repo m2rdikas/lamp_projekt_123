@@ -136,14 +136,14 @@ public class DatabaseOperations {
 		}
 		return convertToJson(candidatesByRegion);
 	}
-	public void updateDB(String firstName, String lastName, Integer candidateId, String id, String party, String county){
+	public static void updateDB(String firstName, String lastName, String county, String party){
 		DataBase.ensure();
 		try{
 			Connection conn = DataBase.getConnection();
 			Statement sta = conn.createStatement();
 			ResultSet rs = sta.executeQuery("SELECT * FROM Candidates WHERE first_name='"+firstName+"' AND last_name='"+lastName+"'");
-			if(rs.getString("first_name").isEmpty()){
-				sta.executeUpdate("INSERT INTO Candidates (first_name, last_name, candidate_id, id, party, county) VALUES('"+firstName+"', '"+lastName+"',"+candidateId+", '"+id+"', '"+party+"', '"+county+"')");
+			if(!rs.next()){
+				sta.executeUpdate("INSERT INTO Candidates (first_name, last_name,party, county) VALUES('"+firstName+"', '"+lastName+"','"+party+"', '"+county+"')");
 			}
 			sta.close();
 			conn.close();

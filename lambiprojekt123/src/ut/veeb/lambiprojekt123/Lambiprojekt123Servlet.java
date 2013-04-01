@@ -15,6 +15,7 @@ public class Lambiprojekt123Servlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
 		DataBase.ensure();
+		DatabaseOperations.updateDB(req.getParameter("firstName"), req.getParameter("lastName"), req.getParameter("county"), req.getParameter("party"));
 		resp.setContentType("text/plain");
 		resp.getWriter().println("Hello, world");
 		try {
