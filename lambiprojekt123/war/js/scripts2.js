@@ -146,11 +146,11 @@ $(document).ready(function (){
 		
 		$.post('/lambiprojekt123?query=geteverything', function(data) {
 			  console.log(data);
-			  var nimed = new Array(data.length-1);
-			  for (var i = 0; i < data.length-1;i++) {
-				  if($.inArray(data[i].firstName, nimed) === -1 && data[i].firstName){
-				  nimed[i] = data[i].firstName
-		}
+			  var nimed = new Array(data.length);
+			  for (var i = 0; i < data.length;i++) {
+				  
+				  nimed[i] = data[i].firstName;
+		
 				  }
 			  console.log(nimed);
 			  
