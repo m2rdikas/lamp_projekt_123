@@ -13,6 +13,7 @@
 <script type="text/javascript" language="Javascript" src="js/scripts2.js"></script>
 <script type="text/javascript" language="Javascript" src="js/sorttable.js"></script>
 <script type="text/javascript" language="Javascript" src="js/popup.js"></script>
+<script type="text/javascript" language="Javascript" src="js/container_replacement.js"></script>
 <script src="js/jquery-1.9.1.js"></script>
 <script src="js/jquery-ui-1.10.2.custom.js"></script>
 <script src="http://connect.facebook.net/en_US/all.js"></script>
@@ -29,7 +30,9 @@
 					<label>Nimi: </label><input class="name" type="text"
 						name="usrename"><br> <label>Parool: </label><input
 						type="password" name="password"><br> <input
-						type="submit" class="button sign" method="POST" value="Sign In">
+						type="submit" class="button sign" method="POST" button onclick="ReplaceContentInContainer('login','Olete sisse loginud kui')" value="Sign In">
+					                       
+			    </form>
 					<fb:login-button autologoutlink="true" onlogin="OnRequestPermission();">
 					</fb:login-button>
 					<script language="javascript" type="text/javascript">
@@ -39,10 +42,7 @@
         					cookie: true,
         					xfbml: true
     					});   
-    					</script>
-                        
-			    </form>
-					  					
+    					</script>			
 
 			</div>
 		</div>

@@ -1,6 +1,6 @@
 //fb app-id: 	  178583862294466
 //App secret:     839f12dd55b3bc7fc2e69542c8f39450
-//login site url: http://xw-primal-quanta-m.appspot.com/login
+//login site url: http://xw-primal-quanta-m.appspot.com/
 
 package ut.veeb.lambiprojekt123;
 
