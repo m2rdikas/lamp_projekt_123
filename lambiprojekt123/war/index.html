@@ -30,7 +30,16 @@
 						name="usrename"><br> <label>Parool: </label><input
 						type="password" name="password"><br> <input
 						type="submit" class="button sign" method="POST" value="Sign In">
-					<a href="js/fb.jsp" onclick="return popup(this, 'notes')"><img src="img/facebook.png" width="32" height="32"></a>
+					<fb:login-button autologoutlink="true" onlogin="OnRequestPermission();">
+					</fb:login-button>
+					<script language="javascript" type="text/javascript">
+    					FB.init({
+        					appId: '178583862294466',
+       						status: true,
+        					cookie: true,
+        					xfbml: true
+    					});   
+    					</script>
                         
 			    </form>
 					  					

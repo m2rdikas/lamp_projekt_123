@@ -37,7 +37,7 @@ public class FbServlet extends HttpServlet{
  
         String token = null;
         try {
-            String g = "https://graph.facebook.com/oauth/access_token?client_id=178583862294466&redirect_uri=" + URLEncoder.encode("http://http://xw-primal-quanta-m.appspot.com/login", "UTF-8") + "&client_secret=839f12dd55b3bc7fc2e69542c8f39450&code=" + code;
+            String g = "https://graph.facebook.com/oauth/access_token?client_id=178583862294466&redirect_uri=" + URLEncoder.encode("http://xw-primal-quanta-m.appspot.com/", "UTF-8") + "&client_secret=839f12dd55b3bc7fc2e69542c8f39450&code=" + code;
             URL u = new URL(g);
             URLConnection c = u.openConnection();
             BufferedReader in = new BufferedReader(new InputStreamReader(c.getInputStream()));
