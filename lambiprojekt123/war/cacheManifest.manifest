@@ -1,5 +1,6 @@
 CACHE MANIFEST
 
+CACHE:
 chart-of-the-day-ipad-unit-sales-oct-2012.jpg
 css/css.css
 css/jquery-ui-1.10.2.custom.css
@@ -21,3 +22,6 @@ js/popup.js
 js/scripts.js
 js/scripts2.js
 js/sorttable.js
+
+NETWORK:
+*
