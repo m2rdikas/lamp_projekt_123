@@ -74,7 +74,6 @@ public class FbServlet extends HttpServlet{
         String middleNames;
         String lastName;
         String email;
-        Gender gender;
         try {
             JSONObject json = new JSONObject(graph);
             facebookId = json.getString("id");
@@ -87,17 +86,7 @@ public class FbServlet extends HttpServlet{
                 middleNames = null;
             lastName = json.getString("last_name");
             email = json.getString("email");
-            if (json.has("gender")) {
-                String g = json.getString("gender");
-                if (g.equalsIgnoreCase("female"))
-                    gender = Gender.FEMALE;
-                else if (g.equalsIgnoreCase("male"))
-                    gender = Gender.MALE;
-                else
-                    gender = Gender.UNKNOWN;
-            } else {
-                gender = Gender.UNKNOWN;
-            }
+            
         } catch (JSONException e) {
             // an error occurred, handle this
         }
