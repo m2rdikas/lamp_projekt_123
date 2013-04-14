@@ -148,11 +148,9 @@ $(document).ready(function (){
 			  console.log(data);
 			  if(typeof(Storage)!=="undefined")
 			  	{ 
-				  for (var i = 0; i<data.length; i++){
-					  localStorage.setItem("data"+i, JSON.stringify(data[i]))
-				  }
+				  localStorage.setItem("data", JSON.stringify(data));
 			  	}
-			  console.log(JSON.parse(localStorage["data0"]));
+			  console.log(JSON.parse(localStorage["data"]));
 			  
 			  var nimed = new Array(data.length);
 			  for (var i = 0; i < data.length;i++) {
@@ -186,7 +184,11 @@ $(document).ready(function (){
 		$.post('/lambiprojekt123?query='+ window.location.hash.split("=")[1], function(data) {
 //			  console.log(data);
 //			  data123 = data;
-			  updateSearch(window.location.hash.split(":")[1], data)
+			 if(typeof(Storage)!=="undefined")
+			  	{ 
+				  localStorage.setItem("data", JSON.stringify(data));
+			  	}
+			  updateSearch(window.location.hash.split(":")[1], JSON.parse(localStorage["data"]))
 			  //alert(query);
 			
 			});
@@ -232,13 +234,16 @@ $(document).ready(function (){
 		
 		$.post('/lambiprojekt123?query='+query, function(data) {
 //			  console.log(data);
-			  data123 = data;
+			  if(typeof(Storage)!=="undefined")
+			  	{ 
+				  localStorage.setItem("data", JSON.stringify(data));
+			  	}
 			  //alert(query);
 			});
 		var timeoutId = window.setTimeout(
 				function () {
 					//console.log(data123);
-					updateSearch(that, data123);
+					updateSearch(that, JSON.parse(localStorage["data"]));
 					$("#loader").hide();
 				},1000
 		);
