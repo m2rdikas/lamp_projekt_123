@@ -56,7 +56,7 @@ function setCandidate(){
 		validateNotEmpty('party');
 	}
 	if(isValid){
-		$.get('/lambiprojekt123?firstName='+document.getElementById('firstName').value+'&lastName='+document.getElementById('lastName').value+'&county='+document.getElementById('countySelect').value+'&party='+document.getElementById('party').value, function(data) {
+		$.get('/lambiprojekt123?operation=updatedb&firstName='+document.getElementById('firstName').value+'&lastName='+document.getElementById('lastName').value+'&county='+document.getElementById('countySelect').value+'&party='+document.getElementById('party').value, function(data) {
 			  $('.result').html(data);
 			  alert('Edukalt kandideeritud.');
 			});

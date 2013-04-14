@@ -1,5 +1,84 @@
+function showStatistics() {
+	$("#statisticsContent").empty();
+	$.post('/lambiprojekt123?query=geteverything', function(data) {
+		console.log(data);
+		var andmed =new Array();
+		var haaliKokku = 0;
+		for(var i=0;i<data.length;i++){
+			haaliKokku = haaliKokku + parseInt(data[i].votes);
+			andmed[i] = [data[i].votes,data[i].party];
+		}
+		
+		$('#statisticsContent').jqbargraph({
+		  	 data: andmed,
+		   colors: ['#FFFF00','#FF0000','#FF00FF'],
+		   legend: true,
+		   animate: false
+		});
+	});
 
+}
+function onOpened() {
+    //alert("Channel opened!");
+}
+
+function onMessage(msg) {
+    //alert(msg.data);
+	showStatistics();
 	
+}
+
+function onError(err) {
+    //alert(err);
+}
+
+function onClose() {
+    //alert("Channel closed!");
+}
+
+function addVote(id){
+	$.get('/lambiprojekt123?operation=addvote&candidateID='+id, function(data) {
+		showVoteContent();
+		});
+}
+function removeVote(id){
+	$.get('/lambiprojekt123?operation=removevote&candidateID='+id, function(data) {
+		showVoteContent();
+		});
+}
+function showVoteContent(){
+	$.post('/lambiprojekt123?query=geteverything', function(data) {
+		  console.log(data);
+		  var html = "<h1>...</h1>" +
+		  	"<table>" +
+	  			"<tr>" +
+	  				"<th>id</th>" +
+	  				"<th>Nimi</th>" +
+	  				"<th>Partei</th>" +
+	  				"<th>Piirkond</th>" +
+	  				"<th>Häälte arv</th>" +
+	  				"<th></th>"
+	  			"</tr>";
+		  
+		  for(var i = 0; i<data.length;i++){
+				html += "<tr>" +
+    			"<td>" + data[i].candidateId + "</td>" +
+    			"<td>" + data[i].firstName + ", " + data[i].lastName + "</td>" +
+    			"<td>" + data[i].party + "</td>" +
+    			"<td>" + data[i].county + "</td>" +
+    			"<td>" + data[i].votes + "</td>" +
+    			"<td><span onclick=addVote("+data[i].candidateId+");>+</span>  " +
+    			"<span onclick=removeVote("+data[i].candidateId+");>-</span></td>" +
+    			"</tr>";
+		  }
+		  html += "</table>";
+		  $("#voteContent").html(html);
+		  
+		});
+	$.get('/channel?operation=msg', function(data) {
+		
+	});
+}
 function ChangeContentToHash () {
 	if(window.location.hash) {
 		//alert(typeof window.location.hash.replace('#',''));
@@ -44,7 +123,7 @@ function updateSearch (that, tulemus) {
 		//alert(json);
 		
 		data = tulemus;
-			  console.log(data);
+//			  console.log(data);
 //			  alert(currentId);
 			  var html = "<h1>Tulemus</h1>" +
 				  	"<table>" +
@@ -137,6 +216,36 @@ function displayInfo(that) {
 }
 
 $(document).ready(function (){
+	$("#statisticsButton").click(function(){
+		showStatistics();
+	});
+	$.get('/channel?operation=gettoken', function(token) {
+	    channel = new goog.appengine.Channel(token);
+	    socket = channel.open();
+	    socket.onopen = onOpened;
+	    socket.onmessage = onMessage;
+	    socket.onerror = onError;
+	    socket.onclose = onClose;
+		});
+	$("#voteButton").click(function(){
+		showVoteContent();
+	});
+	$("#searchButton").click(function(){
+		$.post('/lambiprojekt123?query=geteverything', function(data) {
+			  var nimed = new Array(data.length);
+			  for (var i = 0; i < data.length;i++) {
+				  
+				  nimed[i] = data[i].firstName;
+		
+				  }
+			  console.log(nimed);
+			  
+			  $( "#byname" ).autocomplete({
+					source: nimed,
+					minLength: 2
+				});
+			});
+	});
 	$(function() {
 		var availableTags = [
 			"Eduard",
@@ -145,12 +254,12 @@ $(document).ready(function (){
 //		alert("asd");
 		
 		$.post('/lambiprojekt123?query=geteverything', function(data) {
-			  console.log(data);
+//			  console.log(data);
 			  if(typeof(Storage)!=="undefined")
 			  	{ 
 				  localStorage.setItem("data", JSON.stringify(data));
 			  	}
-			  console.log(JSON.parse(localStorage["data"]));
+//			  console.log(JSON.parse(localStorage["data"]));
 			  
 			  var nimed = new Array(data.length);
 			  for (var i = 0; i < data.length;i++) {
@@ -158,7 +267,7 @@ $(document).ready(function (){
 				  nimed[i] = data[i].firstName;
 		
 				  }
-			  console.log(nimed);
+//			  console.log(nimed);
 			  
 			  $( "#byname" ).autocomplete({
 					source: nimed,

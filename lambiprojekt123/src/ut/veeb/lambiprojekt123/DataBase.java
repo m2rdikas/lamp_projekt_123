@@ -20,15 +20,16 @@ public class DataBase {
 				if (!tableExists(conn, "Candidates")) {
 					Statement sta = conn.createStatement();
 					sta.executeUpdate("CREATE TABLE Candidates ("
+							+ "candidate_id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY," //kandidaadi number
 							+ "first_name VARCHAR(100)," // eesnimi
 							+ "last_name VARCHAR(100)," // pereknimi
-							+ "candidate_id INTEGER," //kandidaadi number
 							+ "id VARCHAR(11)," //isikukood
+							+ "votes INTEGER," //häälte arv
 							+ "party VARCHAR(100)," //partei nimi
 							+ "county VARCHAR(100))"); //maakond
-					sta.executeUpdate("INSERT INTO Candidates (first_name, last_name, candidate_id, id, party, county) VALUES('Eduard', 'Ekskavaator',1, 38908120987, 'SINISED', 'Rapla maakond')");
-					sta.executeUpdate("INSERT INTO Candidates (first_name, last_name, candidate_id, id, party, county) VALUES('Oskar', 'Ekskavaator',2, 39008120987, 'PUNASED', 'HARJUMAA')");
-					sta.executeUpdate("INSERT INTO Candidates (first_name, last_name, candidate_id, id, party, county) VALUES('Oskar', 'Ekskavaator',3, 39008120987, 'SINISED', 'HARJUMAA')");
+					sta.executeUpdate("INSERT INTO Candidates (first_name, last_name, id,votes, party, county) VALUES('Eduard', 'Ekskavaator', 38908120987,13, 'SINISED', 'Rapla maakond')");
+					sta.executeUpdate("INSERT INTO Candidates (first_name, last_name, id,votes, party, county) VALUES('Oskar', 'Luts', 39008120987,11, 'PUNASED', 'HARJUMAA')");
+					sta.executeUpdate("INSERT INTO Candidates (first_name, last_name, id,votes, party, county) VALUES('Martin', 'Reilent', 39008120987,10, 'KOLLASED', 'HARJUMAA')");
 					sta.close();
 				}
 				conn.close();

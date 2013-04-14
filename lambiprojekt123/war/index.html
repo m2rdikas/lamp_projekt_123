@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html manifest="cacheManifest.manifest">
+<html>
 <head>
 <title>e-valimissüsteem</title>
 
@@ -8,6 +8,7 @@
 	title="default" />
 <link rel='stylesheet' href='css/print.css' type='text/css' media="print"/>
 <link href="css/jquery-ui-1.10.2.custom.css" rel="stylesheet">
+<script type="text/javascript" src="/_ah/channel/jsapi"></script>
 <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" language="Javascript" src="js/scripts.js"></script>
 <script type="text/javascript" language="Javascript" src="js/scripts2.js"></script>
@@ -17,13 +18,14 @@
 <script src="js/jquery-1.9.1.js"></script>
 <script src="js/jquery-ui-1.10.2.custom.js"></script>
 <script src="http://connect.facebook.net/en_US/all.js"></script>
+<script src="js/jqBarGraph.1.1.js"></script>
 </head>
 <body>
 
 	<div id="wrap">
 
 		<div id="header">
-			<p>Antud rakendus ei ole mõeldud kasutamiseks reaalsetel valimistel</p>
+			<p>	Antud rakendus ei ole mõeldud kasutamiseks reaalsetel valimistel</p>
 			<p class="head">e-valimissüsteem</p>
 			<div id="login">
 				<form id="login_form">
@@ -53,15 +55,15 @@
 					<input type="button" class="button" value="Algusesse"
 						onclick="changeContent('content1')"> <label class="tekst">Audenditud
 						kasutajale:</label> <input type="button" class="button" value="Kandideeri"
-						onclick="changeContent('candidate')"> <input type="button"
+						onclick="changeContent('candidate')"> <input id="voteButton" type="button"
 						class="button" value="Hääleta" onClick="changeContent('vote')">
-					<label class="tekst">Külastajale:</label> <input type="button"
+					<label class="tekst">Külastajale:</label> <input id="searchButton" type="button"
 						class="button" value="Otsi kandidaate"
 						onclick="changeContent('search')"> <input type="button"
 						class="button" value="Nimekirjad" onClick="changeContent('lists')">
 					<input type="button" class="button" value="Tulemused reaalajas"
 						onclick="changeContent('realTime')"> <input type="button"
-						class="button" value="Statistika"
+						class="button" value="Statistika" id="statisticsButton"
 						onclick="changeContent('statistics')">
 				</div>
 				<div id="content">
@@ -70,18 +72,8 @@
 					</div>
 					<div id="content1">
 						<h1>Tere tulemast....</h1>
-						<h2>KUNA CONTENT PEAKS AINULT MUUTUMA SIIS MA EI TEA MIDA
-							VEEL TEHA</h2>
-						<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-							sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-							aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-							duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-							takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-							dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-							eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-							sed diam voluptua. At vero eos et accusam et justo duo dolores et
-							ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-							Lorem ipsum dolor sit amet.</p>
+						<h2></h2>
+						<p><img src="http://www.teinevoimalus.ee/images/poliitika/valimised.jpg"/></p>
 					</div>
 
 					<div id="candidate" class="hiddenDiv">
@@ -116,7 +108,9 @@
 					</div>
 					<div id="vote" class="hiddenDiv">
 						<h1>Hääleta...</h1>
-						<h2>&nbsp;</h2>
+						<div id="voteContent">
+						
+						</div>
 					</div>
 					<div id="search" class="hiddenDiv">
 						<h1>Otsi</h1>
@@ -178,7 +172,7 @@
 						</div>
 						<div id="searchResults">
 							<h1>Tulemused</h1>
-							
+								Tulemused realajas on statistika all.
 						</div>
 
 					</div>
@@ -244,10 +238,8 @@
 					<div id="statistics" class="hiddenDiv">
 						<input type="button" value="Print" onClick="window.print()"
 							id="print-button">
-						<h1>
-							<img src="chart-of-the-day-ipad-unit-sales-oct-2012.jpg"
-								width="600" height="400">
-						</h1>
+						<div id="statisticsContent">
+						</div>
 					</div>
 				</div>
 			</div>

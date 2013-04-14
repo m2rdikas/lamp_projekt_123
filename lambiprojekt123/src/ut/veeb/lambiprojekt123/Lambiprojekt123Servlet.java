@@ -15,21 +15,21 @@ public class Lambiprojekt123Servlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
 		DataBase.ensure();
-		DatabaseOperations.updateDB(req.getParameter("firstName"), req.getParameter("lastName"), req.getParameter("county"), req.getParameter("party"));
-		resp.setContentType("text/plain");
-		resp.getWriter().println("Hello, world");
-		try {
-			resp.getWriter().println("blabla");
-			Statement sta = DataBase.getConnection().createStatement();
-			ResultSet rs = sta.executeQuery("SELECT * FROM Candidates");
-			resp.getWriter().println(sta.executeQuery("SELECT * FROM Candidates"));
-			rs.next();
-			String blabla = rs.getString(1);
-			resp.getWriter().println("FIRST: "+ blabla);
-			resp.getWriter().println("SECOND: " + rs.getString(1));
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if(req.getParameter("operation").equals("updatedb")){
+			System.out.println("Lisan kandidaadi");
+			DatabaseOperations.updateDB(req.getParameter("firstName"), req.getParameter("lastName"), req.getParameter("county"), req.getParameter("party"));
+		}
+		else if(req.getParameter("operation").equals("addvote")){
+			System.out.println("Lisan hääle kandidaadile nr " +req.getParameter("candidateID") );
+			DatabaseOperations.addVote(req.getParameter("candidateID"));
+			
+		}
+		else if(req.getParameter("operation").equals("removevote")){
+			System.out.println("Eemaldan hääle kandidaadilt nr " +req.getParameter("candidateID") );
+			DatabaseOperations.removeVote(req.getParameter("candidateID"));
+		}
+		else{
+			System.out.println("Mingi viga ajax getiga");
 		}
 	}
 public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
@@ -95,6 +95,7 @@ public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOEx
 //	    String name = req.getParameter("name");
 //	    resp.getWriter().println(name);
 	} catch (Exception ex) {
+			System.out.println(ex);
 			System.out.println("Päring ei andnud tulemust");
 			String result = DatabaseOperations.getEverything();
 			resp.getWriter().write(result);

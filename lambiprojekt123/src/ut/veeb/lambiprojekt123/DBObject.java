@@ -7,6 +7,7 @@ public class DBObject {
 	private String id;
 	private String party;
 	private String county;
+	private String votes;
 	
 	public String getFirstName() {
 		return firstName;
@@ -43,5 +44,11 @@ public class DBObject {
 	}
 	public void setCounty(String county) {
 		this.county = county;
+	}
+	public String getVotes() {
+		return votes;
+	}
+	public void setVotes(String votes) {
+		this.votes = votes;
 	}
 }
