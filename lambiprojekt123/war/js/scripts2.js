@@ -146,6 +146,14 @@ $(document).ready(function (){
 		
 		$.post('/lambiprojekt123?query=geteverything', function(data) {
 			  console.log(data);
+			  if(typeof(Storage)!=="undefined")
+			  	{ 
+				  for (var i = 0; i<data.length; i++){
+					  localStorage.setItem("data"+i, JSON.stringify(data[i]))
+				  }
+			  	}
+			  console.log(JSON.parse(localStorage["data0"]));
+			  
 			  var nimed = new Array(data.length);
 			  for (var i = 0; i < data.length;i++) {
 				  
