@@ -2,6 +2,9 @@ package ut.veeb.lambiprojekt123;
 
 import org.json.JSONObject;
 import org.json.JSONException;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
  
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -24,8 +27,7 @@ public class FbServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {            
-		res.setContentType("text/plain");
-        
+		res.setContentType("application/json");
 		String code = req.getParameter("code");
         String token = null;
         try {
@@ -90,11 +92,10 @@ public class FbServlet extends HttpServlet {
 //            } else {
 //                gender = Gender.UNKNOWN;
 //            }
-            res.getWriter().write(facebookId);
-            res.getWriter().write(firstName);
-//            res.getWriter().write(middleNames);
-            res.getWriter().write(lastName);
-            res.getWriter().write(email);
+            
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            String uusjson = gson.toJson(json);
+            res.getWriter().write(uusjson);
             
         } catch (JSONException e) {
         	res.getWriter().write("1 error " + e);

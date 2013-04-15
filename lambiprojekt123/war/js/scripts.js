@@ -2,7 +2,7 @@ function changeContent(divId){
 	setDisplayNone();
 	vaheta = divId.split(":");
 	
-	
+	if(vaheta[0] != "_=_" ){
 	document.getElementById(vaheta[0]).style.display="inline";
 	if(vaheta[0] == "search"){
 		$("#search div").hide();
@@ -15,6 +15,7 @@ function changeContent(divId){
 	}
 	else {
 		window.location.hash = ""
+	}
 	}
 }
 function setDisplayNone(){
