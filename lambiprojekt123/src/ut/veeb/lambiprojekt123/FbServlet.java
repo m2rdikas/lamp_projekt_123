@@ -1,13 +1,7 @@
-//fb app-id: 	  178583862294466
-//App secret:     839f12dd55b3bc7fc2e69542c8f39450
-//login site url: http://xw-primal-quanta-m.appspot.com/
-
 package ut.veeb.lambiprojekt123;
-
 
 import org.json.JSONObject;
 import org.json.JSONException;
-
  
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -21,23 +15,21 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-
-
-
-public class FbServlet extends HttpServlet{
-	private static final long serialVersionUID = 7526472295622776147L;
-
-	
-	public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {            
-        String code = req.getParameter("code");
-        if (code == null || code.equals("")) {
-            // an error occurred, handle this
-        }
  
+public class FbServlet extends HttpServlet {
+ 
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {            
+		res.setContentType("text/plain");
+        
+		String code = req.getParameter("code");
         String token = null;
         try {
-            String g = "https://graph.facebook.com/oauth/access_token?client_id=178583862294466&redirect_uri=" + URLEncoder.encode("http://xw-primal-quanta-m.appspot.com/", "UTF-8") + "&client_secret=839f12dd55b3bc7fc2e69542c8f39450&code=" + code;
+            String g = "https://graph.facebook.com/oauth/access_token?client_id=450735241679152&redirect_uri=" + URLEncoder.encode("http://elevalimine.appspot.com/fb", "UTF-8") + "&client_secret=a35f70b7358dd35ae7ad3b114fe18b6f&code=" + code;
             URL u = new URL(g);
             URLConnection c = u.openConnection();
             BufferedReader in = new BufferedReader(new InputStreamReader(c.getInputStream()));
@@ -50,7 +42,7 @@ public class FbServlet extends HttpServlet{
             if (token.startsWith("{"))
                 throw new Exception("error on requesting token: " + token + " with code: " + code);
         } catch (Exception e) {
-                // an error occurred, handle this
+        	res.getWriter().write("4 error: " + e);
         }
  
         String graph = null;
@@ -67,6 +59,7 @@ public class FbServlet extends HttpServlet{
             graph = b.toString();
         } catch (Exception e) {
                 // an error occurred, handle this
+        	res.getWriter().write("3 error : " + e);
         }
  
         String facebookId;
@@ -86,13 +79,29 @@ public class FbServlet extends HttpServlet{
                 middleNames = null;
             lastName = json.getString("last_name");
             email = json.getString("email");
+//            if (json.has("gender")) {
+//                String g = json.getString("gender");
+//                if (g.equalsIgnoreCase("female"))
+//                    gender = Gender.FEMALE;
+//                else if (g.equalsIgnoreCase("male"))
+//                    gender = Gender.MALE;
+//                else
+//                    gender = Gender.UNKNOWN;
+//            } else {
+//                gender = Gender.UNKNOWN;
+//            }
+            res.getWriter().write(facebookId);
+            res.getWriter().write(firstName);
+//            res.getWriter().write(middleNames);
+            res.getWriter().write(lastName);
+            res.getWriter().write(email);
             
         } catch (JSONException e) {
-            // an error occurred, handle this
+        	res.getWriter().write("1 error " + e);
         }
-
-
-	}
+        catch (Exception e) {
+        	res.getWriter().write("2 error" + e);
+        	e.printStackTrace();
+        }
+    }
 }
-
-

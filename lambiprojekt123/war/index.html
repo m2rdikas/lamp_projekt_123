@@ -15,30 +15,22 @@
 <script type="text/javascript" language="Javascript" src="js/sorttable.js"></script>
 <script type="text/javascript" language="Javascript" src="js/popup.js"></script>
 <script type="text/javascript" language="Javascript" src="js/container_replacement.js"></script>
+<script type="text/javascript" src="js/scripts3.js"></script>
 <script src="js/jquery-1.9.1.js"></script>
 <script src="js/jquery-ui-1.10.2.custom.js"></script>
-<script src="http://connect.facebook.net/en_US/all.js"></script>
 <script src="js/jqBarGraph.1.1.js"></script>
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<!-- <script src="js/fb.js"></script> -->
 </head>
 <body>
-
+<div id="fb-root"></div>
 	<div id="wrap">
 
 		<div id="header">
 			<p>	Antud rakendus ei ole mõeldud kasutamiseks reaalsetel valimistel</p>
 			<p class="head">e-valimissüsteem</p>
 			<div id="login">
-					<fb:login-button autologoutlink="true" onlogin="OnRequestPermission();">
-					</fb:login-button>
-					<script language="javascript" type="text/javascript">
-    					FB.init({
-        					appId: '178583862294466',
-       						status: true,
-        					cookie: true,
-        					xfbml: true
-    					});   
-    					</script>			
-
+				<span id="FbLoginButton"><img src="/img/facebook-login-button.png" border="0" /></span>
 			</div>
 		</div>
 
