@@ -26,6 +26,7 @@ function setDisplayNone(){
 	document.getElementById('lists').style.display="none";
 	document.getElementById('realTime').style.display="none";
 	document.getElementById('statistics').style.display="none";
+	document.getElementById('map').style.display="none";
 }
 function validateNotEmpty(elemId){
 	var elem = document.getElementById(elemId);

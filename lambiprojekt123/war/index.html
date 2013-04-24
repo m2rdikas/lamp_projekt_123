@@ -21,6 +21,22 @@
 <script src="js/jqBarGraph.1.1.js"></script>
 <script src="http://connect.facebook.net/en_US/all.js"></script>
 <!-- <script src="js/fb.js"></script> -->
+<script
+src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBNR6ARY6fy0V2rrk4wXTdcUbnH8qldVZw&sensor=false">
+</script>
+<script>
+function initialize()
+{
+var mapProp = {
+  center:new google.maps.LatLng(58.3000,26.7330),
+  zoom:6,
+  mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
 </head>
 <body>
 <div id="fb-root"></div>
@@ -84,6 +100,7 @@ window.fbAsyncInit = function() {
 }());
 
 </script>
+
 	<div id="wrap">
 
 		<div id="header">
@@ -112,6 +129,9 @@ window.fbAsyncInit = function() {
 						onclick="changeContent('realTime')"> <input type="button"
 						class="button" value="Statistika" id="statisticsButton"
 						onclick="changeContent('statistics')">
+						<input type="button"
+						class="button" value="Kaart" id="mapButton"
+						onclick="changeContent('map')">
 				</div>
 				<div id="content">
 					<div id="loader">
@@ -288,6 +308,10 @@ window.fbAsyncInit = function() {
 							id="print-button">
 						<div id="statisticsContent">
 						</div>
+					</div>
+					<div id="map" class="hiddenDiv">
+						<h1>Kaart</h1>
+						<div id="googleMap" style="width:500px;height:380px;"></div>
 					</div>
 				</div>
 			</div>
