@@ -4,6 +4,14 @@ function changeContent(divId){
 	
 	if(vaheta[0] != "_=_" ){
 	document.getElementById(vaheta[0]).style.display="inline";
+	if(vaheta[0] == "map"){
+		var mapProp = {
+				center:new google.maps.LatLng(58.5000,25.0000),
+				zoom:7,
+				mapTypeId:google.maps.MapTypeId.ROADMAP
+				};
+		var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+	}
 	if(vaheta[0] == "search"){
 		$("#search div").hide();
 		$("#"+vaheta[1]).show();
