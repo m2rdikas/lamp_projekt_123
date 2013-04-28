@@ -14,10 +14,27 @@ import javax.servlet.http.*;
 public class Lambiprojekt123Servlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("harjumaa", "Harju maakond");
+		map.put("hiiu", "Hiiu maakond");
+		map.put("ida-viru", "Ida-Viru maakond");
+		map.put("jogeva", "Hiiu maakond");
+		map.put("jarva", "J��rva maakond");
+		map.put("laane", "L����ne maakond");
+		map.put("l-viru", "L����ne-Viru maakond");
+		map.put("polva", "P��lva maakond");
+		map.put("parnu", "P��rnu maakond");
+		map.put("rapla", "Rapla maakond");
+		map.put("saare", "Saare maakond");
+		map.put("tartu", "Tartu maakond");
+		map.put("valga", "Valga maakond");
+		map.put("viljandi", "Viljandi maakond");
+		map.put("voru", "V��ru maakond");
+		
 		DataBase.ensure();
 		if(req.getParameter("operation").equals("updatedb")){
 			System.out.println("Lisan kandidaadi");
-			DatabaseOperations.updateDB(req.getParameter("firstName"), req.getParameter("lastName"), req.getParameter("county"), req.getParameter("party"));
+			DatabaseOperations.updateDB(req.getParameter("firstName"), req.getParameter("lastName"), map.get(req.getParameter("county")), req.getParameter("party"));
 		}
 		else if(req.getParameter("operation").equals("addvote")){
 			System.out.println("Lisan hääle kandidaadile nr " +req.getParameter("candidateID") );
@@ -43,20 +60,27 @@ public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOEx
 	map.put("hiiu", "Hiiu maakond");
 	map.put("ida-viru", "Ida-Viru maakond");
 	map.put("jogeva", "Hiiu maakond");
-	map.put("jarva", "J��rva maakond");
-	map.put("laane", "L����ne maakond");
-	map.put("l-viru", "L����ne-Viru maakond");
-	map.put("polva", "P��lva maakond");
-	map.put("parnu", "P��rnu maakond");
+	map.put("jarva", "Järva maakond");
+	map.put("laane", "Lääne maakond");
+	map.put("l-viru", "Lääne-Viru maakond");
+	map.put("polva", "Põlva maakond");
+	map.put("parnu", "Pärnu maakond");
 	map.put("rapla", "Rapla maakond");
 	map.put("saare", "Saare maakond");
 	map.put("tartu", "Tartu maakond");
 	map.put("valga", "Valga maakond");
 	map.put("viljandi", "Viljandi maakond");
-	map.put("voru", "V��ru maakond");
+	map.put("voru", "Võru maakond");
+
 	if(query.equals("geteverything")){
 		String result = DatabaseOperations.getEverything();
 		resp.getWriter().write(result);
+	}
+	else if (query.split(";")[0].equals("getmapData")){
+		
+		String result = DatabaseOperations.getmapData();
+    	System.out.println("(getmapdata) Kasutajale saadeti: "+ result);
+    	resp.getWriter().write(result);
 	}
 	else {
 		

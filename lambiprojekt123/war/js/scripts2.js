@@ -1,3 +1,4 @@
+var martin="asd";
 function showStatistics() {
 	$("#statisticsContent").empty();
 	$.post('/lambiprojekt123?query=geteverything', function(data) {
@@ -216,6 +217,8 @@ function displayInfo(that) {
 }
 
 $(document).ready(function (){
+
+
 	$("#statisticsButton").click(function(){
 		showStatistics();
 	});

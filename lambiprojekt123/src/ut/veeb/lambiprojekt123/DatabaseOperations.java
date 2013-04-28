@@ -61,6 +61,36 @@ public class DatabaseOperations {
 		return convertToJson(candidatesByParty);
 		
 	}
+	public static String getmapData(){
+		DataBase.ensure();
+		List<DBObject> mapdata = new ArrayList<DBObject>();
+		try {
+			Connection conn = DataBase.getConnection();
+			Statement sta = conn.createStatement();
+			String[] maakonnad = {"Harju maakond","Hiiu maakond","Ida-Viru maakond","Hiiu maakond","Järva maakond",
+					"Lääne maakond","Lääne-Viru maakond","Põlva maakond","Pärnu maakond","Rapla maakond","Saare maakond",
+					"Tartu maakond","Valga maakond","Viljandi maakond","Võru maakond"};
+			for(int i=0;i<maakonnad.length;i++){
+				ResultSet rs = sta.executeQuery("SELECT county,party,sum(votes) AS nrofvotes FROM Candidates WHERE county='"+ maakonnad[i]+"' GROUP BY party,county ORDER BY nrofvotes DESC LIMIT 1");
+				while(rs.next()){
+//					System.out.print(rs.getString(1) + "  " + rs.getString(2) + "  " + rs.getString(3) + "  ");
+//					System.out.println();
+					DBObject object = new DBObject();
+					object.setParty(rs.getString("party"));
+					object.setCounty(rs.getString("county"));
+					object.setVotes(rs.getString("nrofvotes"));
+					mapdata.add(object);
+				
+				}
+			}
+			sta.close();
+			conn.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return convertToJson(mapdata);
+		
+	}
 	public static String findCandidatesByPartyAndRegion(String party, String region){
 		DataBase.ensure();
 		List<DBObject> candidatesByPartyAndRegion = new ArrayList<DBObject>();

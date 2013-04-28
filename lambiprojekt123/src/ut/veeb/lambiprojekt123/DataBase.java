@@ -28,8 +28,11 @@ public class DataBase {
 							+ "party VARCHAR(100)," //partei nimi
 							+ "county VARCHAR(100))"); //maakond
 					sta.executeUpdate("INSERT INTO Candidates (first_name, last_name, id,votes, party, county) VALUES('Eduard', 'Ekskavaator', 38908120987,13, 'SINISED', 'Rapla maakond')");
-					sta.executeUpdate("INSERT INTO Candidates (first_name, last_name, id,votes, party, county) VALUES('Oskar', 'Luts', 39008120987,11, 'PUNASED', 'HARJUMAA')");
-					sta.executeUpdate("INSERT INTO Candidates (first_name, last_name, id,votes, party, county) VALUES('Martin', 'Reilent', 39008120987,10, 'KOLLASED', 'HARJUMAA')");
+					sta.executeUpdate("INSERT INTO Candidates (first_name, last_name, id,votes, party, county) VALUES('Oskar', 'Luts', 39008120987,11, 'PUNASED', 'Harju maakond')");
+					sta.executeUpdate("INSERT INTO Candidates (first_name, last_name, id,votes, party, county) VALUES('Martin', 'Reilent', 39008120987,10, 'KOLLASED', 'Harju maakond')");
+					sta.executeUpdate("INSERT INTO Candidates (first_name, last_name, id,votes, party, county) VALUES('Eduard2', 'Ekskavaator2', 38908120987,32, 'SINISED', 'Rapla maakond')");
+					sta.executeUpdate("INSERT INTO Candidates (first_name, last_name, id,votes, party, county) VALUES('Oskar2', 'Luts2', 39008120987,23, 'PUNASED', 'Harju maakond')");
+					sta.executeUpdate("INSERT INTO Candidates (first_name, last_name, id,votes, party, county) VALUES('Martin2', 'Reilent2', 39008120987,15, 'KOLLASED', 'Harju maakond')");
 					sta.close();
 				}
 				conn.close();
