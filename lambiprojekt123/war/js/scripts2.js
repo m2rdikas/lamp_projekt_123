@@ -51,6 +51,7 @@ function removeVote(id){
 		initializeMap();
 		});
 }
+
 function showVoteContent(){
 	$.post('/lambiprojekt123?query=geteverything', function(data) {
 		  console.log(data);
