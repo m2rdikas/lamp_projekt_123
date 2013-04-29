@@ -40,11 +40,15 @@ function onClose() {
 function addVote(id){
 	$.get('/lambiprojekt123?operation=addvote&candidateID='+id, function(data) {
 		showVoteContent();
+		$('#googleMap').empty();
+		initializeMap();
 		});
 }
 function removeVote(id){
 	$.get('/lambiprojekt123?operation=removevote&candidateID='+id, function(data) {
 		showVoteContent();
+		$('#googleMap').empty();
+		initializeMap();
 		});
 }
 function showVoteContent(){
