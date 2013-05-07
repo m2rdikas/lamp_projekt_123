@@ -10,11 +10,11 @@
 <link href="css/jquery-ui-1.10.2.custom.css" rel="stylesheet">
 <script type="text/javascript" src="/_ah/channel/jsapi"></script>
 <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" language="Javascript" src="js/scripts.js"></script>
-<script type="text/javascript" language="Javascript" src="js/scripts2.js"></script>
-<script type="text/javascript" language="Javascript" src="js/sorttable.js"></script>
-<script type="text/javascript" language="Javascript" src="js/popup.js"></script>
-<script type="text/javascript" language="Javascript" src="js/container_replacement.js"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
+<script type="text/javascript" src="js/scripts2.js"></script>
+<script type="text/javascript" src="js/sorttable.js"></script>
+<script type="text/javascript" src="js/popup.js"></script>
+<script type="text/javascript" src="js/container_replacement.js"></script>
 <script type="text/javascript" src="js/scripts3.js"></script>
 <script src="js/jquery-1.9.1.js"></script>
 <script src="js/jquery-ui-1.10.2.custom.js"></script>
@@ -122,12 +122,12 @@ window.fbAsyncInit = function() {
 				</div>
 				<div id="content">
 					<div id="loader">
-						<img src="img/ajax-loader.gif">
+						<img src="img/ajax-loader.gif" alt="">
 					</div>
 					<div id="content1">
 						<h1>Tere tulemast....</h1>
 						<h2></h2>
-						<p><img src="http://www.teinevoimalus.ee/images/poliitika/valimised.jpg"/></p>
+						<p><img src="http://www.teinevoimalus.ee/images/poliitika/valimised.jpg" alt=""/></p>
 					</div>
 
 					<div id="candidate" class="hiddenDiv">
@@ -156,7 +156,7 @@ window.fbAsyncInit = function() {
 						</select><br> <label id="partyLabel">Erakond: </label><input
 							type="text" id="party"> <span class="errorMessage"
 							id="partyError"></span><br> <input type="button"
-							class="button" value="KANDIDEERI !" method="POST" onClick="setCandidate()">
+							class="button" value="KANDIDEERI !" onClick="setCandidate()">
 						<input type="button" class="button" value="Muuda kandidatuuri">
 						<input type="button" class="button" value="Tühista kandidatuur">
 					</div>
@@ -179,7 +179,7 @@ window.fbAsyncInit = function() {
 						<hr>
 						<div id="byCanditate">
 							<label>Kandiaadi nimi: </label><input id="byname" type="text"> <input
-								type="submit" value="OTSI" method="GET" class="searchSubmit">
+								type="submit" value="OTSI" class="searchSubmit">
 						</div>
 						<div id="byRegion">
 							<label>Regioon: </label><select>
@@ -198,11 +198,11 @@ window.fbAsyncInit = function() {
 								<option value="valga">Valga maakond</option>
 								<option value="viljandi">Viljandi maakond</option>
 								<option value="voru">Võru maakond</option>
-							</select> <input type="submit" value="OTSI" method="GET" class="searchSubmit">
+							</select> <input type="submit" value="OTSI" class="searchSubmit">
 						</div>
 						<div id="byParty">
 							<label>Partei: </label><input type="text"> <input
-								type="submit" value="OTSI" method="GET" class="searchSubmit">
+								type="submit" value="OTSI" class="searchSubmit">
 						</div>
 						<div id="byPartyAndRegion">
 							<label>Partei: </label><input type="text"> <label>Regiooni:
@@ -222,7 +222,7 @@ window.fbAsyncInit = function() {
 								<option value="valga">Valga maakond</option>
 								<option value="viljandi">Viljandi maakond</option>
 								<option value="voru">Võru maakond</option>
-							</select> <input type="submit" value="OTSI" method="GET" class="searchSubmit">
+							</select> <input type="submit" value="OTSI" class="searchSubmit">
 						</div>
 						<div id="searchResults">
 							<h1>Tulemused</h1>
@@ -232,7 +232,7 @@ window.fbAsyncInit = function() {
 					</div>
 					<div id="lists" class="hiddenDiv">
 						<h1>Nimekirjad</h1>
-						<form name="form1" method="post" action="">
+						<form name="form1" method="post" action="?">
 							<label> <select name=Nimekiri>
 									<option>Vali...</option>
 									<option>Piirkonna nimekiri</option>
@@ -241,46 +241,46 @@ window.fbAsyncInit = function() {
 							</label>
 						</form>
 
-						<div align="left">
+						<div class="left">
 							<br> Kandidaatide nimekiri: <br>
 							<p>
 						</div>
 						<div>
-							<table width="598" class="sortable">
+							<table class="sortable">
 								<tr>
-									<th width="78">NR</th>
-									<th width="189">PIIRKOND</th>
-									<th width="315">KANDIDAAT</th>
+									<th class="number" >NR</th>
+									<th class="piirkond" >PIIRKOND</th>
+									<th class="kandidaat" >KANDIDAAT</th>
 								</tr>
 								<tr>
-									<td><div align="center">123</div></td>
-									<td><div align="center">Harjumaa</div></td>
-									<td><div align="center">Juurikas, Juss</div></td>
+									<td><div class="keskel">123</div></td>
+									<td><div class="keskel">Harjumaa</div></td>
+									<td><div class="keskel">Juurikas, Juss</div></td>
 								</tr>
 								<tr>
-									<td><div align="center">453</div></td>
-									<td><div align="center">Harjumaa</div></td>
-									<td><div align="center">Savi, Jaan</div></td>
+									<td><div class="keskel">453</div></td>
+									<td><div class="keskel">Harjumaa</div></td>
+									<td><div class="keskel">Savi, Jaan</div></td>
 								</tr>
 								<tr>
-									<td><div align="center">12</div></td>
-									<td><div align="center">Harjumaa</div></td>
-									<td><div align="center">Mill, Viktor</div></td>
+									<td><div class="keskel">12</div></td>
+									<td><div class="keskel">Harjumaa</div></td>
+									<td><div class="keskel">Mill, Viktor</div></td>
 								</tr>
 								<tr>
-									<td><div align="center">554</div></td>
-									<td><div align="center">Saaremaa</div></td>
-									<td><div align="center">Kutt, Margus</div></td>
+									<td><div class="keskel">554</div></td>
+									<td><div class="keskel">Saaremaa</div></td>
+									<td><div class="keskel">Kutt, Margus</div></td>
 								</tr>
 								<tr>
-									<td><div align="center">804</div></td>
-									<td><div align="center">Läänemaa</div></td>
-									<td><div align="center">Hunt, Kaarel</div></td>
+									<td><div class="keskel">804</div></td>
+									<td><div class="keskel">Läänemaa</div></td>
+									<td><div class="keskel">Hunt, Kaarel</div></td>
 								</tr>
 								<tr>
-									<td><div align="center">341</div></td>
-									<td><div align="center">Tartumaa</div></td>
-									<td><div align="center">Küla, Tambet</div></td>
+									<td><div class="keskel">341</div></td>
+									<td><div class="keskel">Tartumaa</div></td>
+									<td><div class="keskel">Küla, Tambet</div></td>
 								</tr>
 							</table>
 						</div>

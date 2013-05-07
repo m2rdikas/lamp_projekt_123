@@ -47,6 +47,25 @@ input.button{
 	display: block;
 
 }
+table.sortable{
+	width: 589px;
+}
+th.number{
+	width: 78px;
+}
+th.piirkond{
+	width: 189px;
+}
+th.kandidaat{
+	width: 315px;
+}
+div.keskel{
+	align: center;
+}
+div.left{
+	align: left;
+}
+
 h1{
 	text-align: center;
 }
