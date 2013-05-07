@@ -1,0 +1,14 @@
+HTML "enne"
+Result:	 32 Errors, 6 warning(s)
+Tulemus võetud http://validator.w3.org/
+Erinevat tüüpi errorid ja warningud
+ Line 15, Column 75: The language attribute on the script element is obsolete. You can safely omit it.
+…pt type="text/javascript" language="Javascript" src="js/sorttable.js"></script>
+ Line 138, Column 37: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+						<img src="img/ajax-loader.gif">
+Line 172, Column 82: Attribute method not allowed on element input at this point.
+…				class="button" value="KANDIDEERI !" method="POST" onClick="setCandidate()">
+ Line 266, Column 25: The width attribute on the th element is obsolete. Use CSS instead.
+									<th width="315">KANDIDAAT</th>
+
+HTML "pärast"
