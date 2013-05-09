@@ -12,3 +12,46 @@ Line 172, Column 82: Attribute method not allowed on element input at this point
 									<th width="315">KANDIDAAT</th>
 
 HTML "pärast"
+Result:	 1 Errors, 1 warning(s)
+Warningut validaator ei näita
+
+Error
+ Line 25, Column 88: & did not start a character reference. (& probably should have been escaped as &amp;.)
+…apis.com/maps/api/js?key=AIzaSyBNR6ARY6fy0V2rrk4wXTdcUbnH8qldVZw&sensor=false">
+
+Validaator saab asjast valesti aru, tegemist on google keyga map api jaoks
+
+
+CSS "enne"
+Sorry! We found the following errors (6)
+URI : http://xw-primal-quanta-m.appspot.com/css/jquery-ui-1.10.2.custom.css
+51	 .ui-helper-zfix	 Parse Error Opacity=0)
+286	 .ui-priority-secondary, .ui-widget-content .ui-priority-secondary, .ui-widget-header .ui-priority-secondary	 Parse Error Opacity=70)
+293	 .ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled	 Parse Error Opacity=35)
+297	 .ui-state-disabled .ui-icon	 Parse Error Opacity=35)
+545	 .ui-widget-overlay	 Parse Error Opacity=50)
+552	 .ui-widget-shadow	 Parse Error Opacity=20)
+
+Warnings(3)
+URI : http://xw-primal-quanta-m.appspot.com/css/jquery-ui-1.10.2.custom.css
+14		Invalid separator in shape definition. It must be a comma.
+166		Family names containing whitespace should be quoted. If quoting is omitted, any whitespace characters before and after the name are ignored and any sequence of whitespace characters inside the name is converted to a single space.
+176		Family names containing whitespace should be quoted. If quoting is omitted, any whitespace characters before and after the name are ignored and any sequence of whitespace characters inside the name is converted to a single space.
+
+CSS "pärast"
+Sorry! We found the following errors (6)
+URI : http://xw-primal-quanta-m.appspot.com/css/jquery-ui-1.10.2.custom.css
+51	 .ui-helper-zfix	 Parse Error Opacity=0)
+286	 .ui-priority-secondary, .ui-widget-content .ui-priority-secondary, .ui-widget-header .ui-priority-secondary	 Parse Error Opacity=70)
+293	 .ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled	 Parse Error Opacity=35)
+297	 .ui-state-disabled .ui-icon	 Parse Error Opacity=35)
+545	 .ui-widget-overlay	 Parse Error Opacity=50)
+552	 .ui-widget-shadow	 Parse Error Opacity=20)
+
+Warnings(3)
+URI : http://xw-primal-quanta-m.appspot.com/css/jquery-ui-1.10.2.custom.css
+14		Invalid separator in shape definition. It must be a comma.
+166		Family names containing whitespace should be quoted. If quoting is omitted, any whitespace characters before and after the name are ignored and any sequence of whitespace characters inside the name is converted to a single space.
+176		Family names containing whitespace should be quoted. If quoting is omitted, any whitespace characters before and after the name are ignored and any sequence of whitespace characters inside the name is converted to a single space.
+
+Antud errorid ja warningud jäid parandatama, sest opacity filter ei ole standardfunktsioon ja kuna tegemist on jquery enda cssga

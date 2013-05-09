@@ -1,0 +1,11 @@
+scripts.js
+Enamik probleemidest seotud tühikutega pärast koma ja tühikute asemel oleme tabe kasutanud
+Tuleks kasutada tühikuid pärast komasid. Lisaks on intendatsiooni probleemid. Tabide asemel tühikuid
+ei kasuta, sest ei näe sellel reaalset kasu, tühikud on mahukulukamad.
+
+scripts2.js
+Samuti, mis ei meeldi validaatorile on tabide kasutamine ja see, et pärast komasid ja enne erinevaid sulge pole tühikut
+Kuna ei leia, et see oleks kuidagi halb siis ilma tühikute kasutamiseta on js fail pisem ja see tõttu brauserile mugavam.
+
+scripts3.js
+Samamoodi tühikute probleemid

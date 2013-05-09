@@ -60,10 +60,10 @@ th.kandidaat{
 	width: 315px;
 }
 div.keskel{
-	align: center;
+	text-align: center;
 }
 div.left{
-	align: left;
+	text-align: left;
 }
 
 h1{
